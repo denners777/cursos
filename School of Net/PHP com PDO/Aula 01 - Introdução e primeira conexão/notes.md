@@ -1,5 +1,5 @@
-*Habilitar extensão  no php.ini
+# AnotaÃ§Ãµes
 
-PDO -> Trabalhar com Banco de Dados.
-
-Documentação -> php.net/manual/en/book.pdo.php
+* Habilitar extensÃ£o  no php.ini
+* PDO -> Trabalhar com Banco de Dados.
+* DocumentaÃ§Ã£o -> php.net/manual/en/book.pdo.php
