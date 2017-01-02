@@ -1,4 +1,4 @@
-# Anotações
+# Anotacoes
 
 * Habilitar extensão  no php.ini
 * PDO -> Trabalhar com Banco de Dados.

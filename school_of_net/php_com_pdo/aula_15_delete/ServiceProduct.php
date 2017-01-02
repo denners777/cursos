@@ -40,18 +40,24 @@ class ServiceProduct
     {
         $query = "UPDATE `produtos` SET `name` = ?, `desc` = ? WHERE `id` = ?";
         $stmt = $this->db->prepare($query);
-        
+
         $stmt->bindValue(1, $this->product->getName());
         $stmt->bindValue(2, $this->product->getDesc());
         $stmt->bindValue(3, $this->product->getId());
-        
+
         return $stmt->execute();
 
     }
 
-    public function delete()
+    public function delete(int $id)
     {
-        
+        $query = "DELETE FROM `produtos` WHERE `id` = :id";
+        $stmt = $this->db->prepare($query);
+
+        $stmt->bindValue('id', $id);
+
+        return $stmt->execute();
+
     }
 
 }

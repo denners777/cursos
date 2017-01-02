@@ -2,5 +2,6 @@
 
 interface IConn
 {
-	public function connect();
+
+    public function connect();
 }

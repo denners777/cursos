@@ -9,10 +9,10 @@ require_once "ServiceProduct.php";
 $db = new Conn('localhost', 'test_oo', 'root', '');
 $product = new Product;
 
-$product->setName('HTML course')
-        ->setDesc('Build a complete website.');
-
+$product->setName('PHP course')
+        ->setDesc('Build a complete website in PHP.')
+        ->setId(1);
 
 $service = new ServiceProduct($db, $product);
 
-print_r($service->save());
+print_r($service->update());

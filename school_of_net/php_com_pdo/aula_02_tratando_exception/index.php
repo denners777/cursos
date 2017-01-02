@@ -1,12 +1,10 @@
 <?php
 
-try{
+try {
 
-	$conn = new \PDO('mysql:host=localhost;dbname=test_oo', 'root', '');
+    $conn = new \PDO('mysql:host=localhost;dbname=test_oo', 'root', '');
+} catch (\PDOException $e) {
 
-}catch(\PDOException $e){
-  	
-  	echo 'Erro! Message: ' . $e->getMessage() . ' Code: ' . $e->getCode();
-  	echo'<xmp>', print_r($e);
-  	
+    echo 'Erro! Message: ' . $e->getMessage() . ' Code: ' . $e->getCode();
+    echo'<xmp>', print_r($e);
 }

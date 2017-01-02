@@ -46,6 +46,4 @@ class Product implements IProduct
 
     }
 
-
-
 }

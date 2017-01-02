@@ -12,7 +12,6 @@ $product = new Product;
 $product->setName('HTML course')
         ->setDesc('Build a complete website.');
 
-
 $service = new ServiceProduct($db, $product);
 
 print_r($service->save());

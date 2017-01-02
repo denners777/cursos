@@ -7,3 +7,8 @@ require_once "Product.php";
 require_once "ServiceProduct.php";
 
 $db = new Conn('localhost', 'test_oo', 'root', '');
+$product = new Product;
+
+$service = new ServiceProduct($db, $product);
+
+print_r($service->delete(1));
