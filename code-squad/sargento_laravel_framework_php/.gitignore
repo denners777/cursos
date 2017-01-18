@@ -8,7 +8,6 @@ Homestead.yaml
 
 # Created by https://www.gitignore.io/api/laravel,bower,netbeans
 
-
 ### Laravel ###
 /bootstrap/compiled.php
 /vendor
