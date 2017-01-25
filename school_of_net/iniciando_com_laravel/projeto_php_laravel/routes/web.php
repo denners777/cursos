@@ -1,16 +1,59 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | This file is where you may define all of the routes that are handled
+  | by your application. Just tell Laravel the URIs it should respond
+  | to using a Closure or controller method. Build something great!
+  |
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('foo', function () {
+    return 'Método GET';
+});
+
+Route::post('foo', function () {
+    return 'Método POST';
+});
+
+Route::get('foo/bar', function () {
+    return view('foo.bar');
+});
+
+/*
+  Route::match(['get', 'post'], 'foo', function () {
+  return 'Olá';
+  });
+ */
+
+/*
+  Route::any('foo', function () {
+  return 'Any';
+  }); */
+
+// Não precisa mais disso
+//Route::group(['middleware' => ['web']], function() {
+
+Route::group(['prefix' => 'user'], function() {
+    Route::get('/', function () {
+        return 'Lista de Usuários';
+    });
+
+    Route::get('add', function () {
+        return 'Adicionar usuário';
+    });
+    Route::get('{id}', function ($id) {
+        return 'Este é o usuário ' . $id;
+    });
+    Route::get('{id}/edit', function ($id) {
+        return 'Editando o usuário ' . $id;
+    });
+});
+//});
