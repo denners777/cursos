@@ -24,7 +24,13 @@ Route::post('foo', function () {
 });
 
 Route::get('foo/bar', function () {
-    return view('foo.bar');
+    return view('foo.bar', [
+        'foo' => 'Asdr',
+        'bar' => '<b>hfhfh</b>'
+    ]);
+});
+Route::get('foo/baz', function () {
+    return view('foo.baz');
 });
 
 /*
@@ -42,16 +48,15 @@ Route::get('foo/bar', function () {
 //Route::group(['middleware' => ['web']], function() {
 
 Route::group(['prefix' => 'user'], function() {
-    Route::get('/', function () {
-        return 'Lista de Usuários';
-    });
+
+    Route::get('/', ['uses' => 'UserController@index']);
+
+    Route::get('{id}', ['uses' => 'UserController@show']);
 
     Route::get('add', function () {
         return 'Adicionar usuário';
     });
-    Route::get('{id}', function ($id) {
-        return 'Este é o usuário ' . $id;
-    });
+
     Route::get('{id}/edit', function ($id) {
         return 'Editando o usuário ' . $id;
     });
