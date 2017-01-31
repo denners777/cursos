@@ -29,11 +29,17 @@ class UserController extends Controller
 
     public function post(Request $resquest)
     {
-        echo 'Tudo', dump($resquest->all()),
+        /*echo 'Tudo', dump($resquest->all()),
         'Input', dump($resquest->input('email')),
         'Only', dump($resquest->only(['name', 'email'])),
         'Except', dump($resquest->except('name'))
-        ;
+        ;*/
+        
+     $this->validate($resquest, [
+         'name' => ['required'],
+         'email' => ['required', 'email'],
+         'password' => ['required', 'confirmed', 'min:4'],
+     ]);
 
     }
 
