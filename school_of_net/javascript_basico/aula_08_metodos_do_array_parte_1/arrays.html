@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <strong>concat()</strong>
+        <script>
+
+            var arr1 = new Array('Red', 10, 20.4);
+            var arr2 = Array('Blue', 12, 30.3, arr1);
+            arr1 = arr1.concat(arr2);
+
+            console.log('Concat(): ', arr1);
+            document.write('<p>Concat(): ' + arr1 + '</p><p> length -> ' + arr1.length + '</p><br />');
+
+        </script>
+
+        <strong>join()</strong>
+        <script>
+
+            var list = arr1.join(' - ');
+
+            console.log('Join(): ', list);
+            document.write('<p>Join(): ' + list + '</p><br />');
+
+        </script>
+
+        <strong>push()</strong>
+        <script>
+
+            var arr3 = new Array('Black', 160, 89.1);
+            arr3.push('New Element');
+            var list = arr3.join(' - ');
+
+            console.log('Push(): ', list);
+            document.write('<p>Push(): ' + list + '</p><br />');
+
+        </script>
+        
+        <strong>pop()</strong>
+        <script>
+
+            arr3.pop();
+            var list = arr3.join(' - ');
+
+            console.log('Pop(): ', list);
+            document.write('<p>Pop(): ' + list + '</p><br />');
+
+        </script>
+        
+        <strong>shift()</strong>
+        <script>
+
+            arr3.shift();
+            var list = arr3.join(' - ');
+
+            console.log('Shift(): ', list);
+            document.write('<p>Shift(): ' + list + '</p><br />');
+
+        </script>
+
+    </body>
+</html>
