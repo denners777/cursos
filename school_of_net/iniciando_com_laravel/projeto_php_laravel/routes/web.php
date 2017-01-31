@@ -51,12 +51,10 @@ Route::group(['prefix' => 'user'], function() {
 
     Route::get('/', ['uses' => 'UserController@index']);
 
+    Route::get('add', ['uses' => 'UserController@create']);
+    Route::post('add', ['uses' => 'UserController@post']);
+
     Route::get('{id}', ['uses' => 'UserController@show']);
-
-    Route::get('add', function () {
-        return 'Adicionar usuário';
-    });
-
     Route::get('{id}/edit', function ($id) {
         return 'Editando o usuário ' . $id;
     });
