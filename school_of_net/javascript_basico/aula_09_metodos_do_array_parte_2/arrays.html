@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <strong>unshift()</strong>
+        <script>
+
+            var arr1 = new Array('Red', 10, 20.4);
+            arr1.unshift('New Element');
+            var list = arr1.join(' - ');
+
+            console.log('Unshift(): ', arr1);
+            document.write('<p>Unshift(): ' + list + '</p><br />');
+
+        </script>
+        
+        <strong>slice()</strong>
+        <script>
+
+            var arr1 = new Array('Red', 10, 20.4, 'New Element');
+            var arr2 = arr1.slice(1, 4);
+            
+            var list = arr2.join(' - ');
+
+            console.log('Slice(): ', arr2);
+            document.write('<p>Slice(): ' + list + '</p><br />');
+
+        </script>
+        
+        <strong>splice()</strong>
+        <script>
+
+            var arr1 = new Array('Red', 10, 20.4, 'New Element');
+            arr1.splice(1, 2, 'A', 'B', 'C', 'D');
+            
+            var list = arr1.join(' - ');
+
+            console.log('Splice(): ', arr1);
+            document.write('<p>Splice(): ' + list + '</p><br />');
+
+        </script>
+        
+        <strong>reverse()</strong>
+        <script>
+
+            var arr1 = new Array('A', 'B', 'C', 'D', 'E');
+            arr1.reverse();
+            
+            var list = arr1.join(' - ');
+
+            console.log('Reverse(): ', arr1);
+            document.write('<p>Reverse(): ' + list + '</p><br />');
+
+        </script>
+
+    </body>
+</html>
