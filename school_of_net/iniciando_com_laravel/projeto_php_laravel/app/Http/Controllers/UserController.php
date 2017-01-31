@@ -30,10 +30,11 @@ class UserController extends Controller
     public function post(Request $resquest)
     {
         echo 'Tudo', dump($resquest->all()),
-                'Input', dump($resquest->input('email')),
-                'Only', dump($resquest->only(['name', 'email'])),
-                'Except', dump($resquest->except('name'))
-                ;
+        'Input', dump($resquest->input('email')),
+        'Only', dump($resquest->only(['name', 'email'])),
+        'Except', dump($resquest->except('name'))
+        ;
+
     }
 
 }
