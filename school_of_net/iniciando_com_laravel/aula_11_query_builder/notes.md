@@ -1,10 +1,17 @@
 DennerPC@DESKTOP-GVINNSO MINGW64 /c/laragon/www/cursos/school_of_net/iniciando_com_laravel/projeto_php_laravel (master)
+
 $ php artisan tinker
-Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
->>> DB::table('users')->insert(['name' => 'Denner Fernandes', 'email' => 'denners777@htomail.com', 'password' => bcrypt('mypassword')])
+
+Psy Shell v0.8.1 (PHP 7.0.12 Ã”Ã‡Ã¶ cli) by Justin Hileman
+
+DB::table('users')->insert(['name' => 'Denner Fernandes', 'email' => 'denners777@htomail.com', 'password' => bcrypt('mypassword')])
+
 => true
->>> DB::table('users')->get()
+
+DB::table('users')->get()
+
 => Illuminate\Support\Collection {#699
+
      all: [
        {#674
          +"id": 1,
@@ -17,8 +24,11 @@ Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
        },
      ],
    }
->>> DB::table('users')->where('id', 1)->get()
+
+DB::table('users')->where('id', 1)->get()
+
 => Illuminate\Support\Collection {#681
+
      all: [
        {#692
          +"id": 1,
@@ -31,7 +41,9 @@ Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
        },
      ],
    }
->>> DB::table('users')->where('id', 1)->first()
+   
+DB::table('users')->where('id', 1)->first()
+
 => {#689
      +"id": 1,
      +"name": "Denner Fernandes",
@@ -41,7 +53,9 @@ Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
      +"created_at": null,
      +"updated_at": null,
    }
->>> DB::table('users')->first()
+   
+DB::table('users')->first()
+
 => {#673
      +"id": 1,
      +"name": "Denner Fernandes",
@@ -51,9 +65,13 @@ Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
      +"created_at": null,
      +"updated_at": null,
    }
->>> DB::table('users')->where('id', 1)->update(['name' => 'Denner Fernandes da Silva'])
+   
+DB::table('users')->where('id', 1)->update(['name' => 'Denner Fernandes da Silva'])
+
 => 1
->>> DB::table('users')->first()
+
+DB::table('users')->first()
+
 => {#685
      +"id": 1,
      +"name": "Denner Fernandes da Silva",
@@ -63,12 +81,18 @@ Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
      +"created_at": null,
      +"updated_at": null,
    }
->>> DB::table('users')->delete()
+   
+DB::table('users')->delete()
+
 => 1
->>> DB::table('users')->first()
+
+DB::table('users')->first()
+
 => null
->>> DB::table('users')->get()
-=> Illuminate\Support\Collection {#682
+
+DB::table('users')->get()
+
+=> Illuminate\Support\Collection 
+{#682
      all: [],
    }
->>>
