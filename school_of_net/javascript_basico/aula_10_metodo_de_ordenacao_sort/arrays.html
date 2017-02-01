@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Sort arrays</h1>
+        <strong>sort()</strong>
+        <script>
+
+            var arr1 = new Array(5, 3, 4, 2, 0, 1);
+            arr1.sort();
+            var list = arr1.join(' - ');
+
+            console.log('Sort(): ', arr1);
+            document.write('<p>Sort(): ' + list + '</p><br />');
+
+        </script>
+
+        <strong>sort() with callback</strong>
+        <script>
+
+            var arr1 = new Array(5, 3, 4, 2, 0, 1);
+            function desc(a, b) {
+                if (a > b) {
+                    return -1;
+                }
+                if (a < b) {
+                    return 1;
+                }
+                return 0;
+            }
+
+            arr1.sort(desc);
+            var list = arr1.join(' - ');
+
+            console.log('Sort(): ', arr1);
+            document.write('<p>Sort(): ' + list + '</p><br />');
+
+        </script>
+
+    </body>
+</html>
