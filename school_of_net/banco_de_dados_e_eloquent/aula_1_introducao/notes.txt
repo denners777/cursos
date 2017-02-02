@@ -1,0 +1,42 @@
+DennerPC@DESKTOP-GVINNSO MINGW64 /c/laragon/www/cursos/school_of_net/banco_de_dados_e_eloquent/projeto_php_laravel (master)
+$ php artisan tinker
+Psy Shell v0.8.1 (PHP 7.0.12 ÔÇö cli) by Justin Hileman
+>>> DB::insert('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', ['Denner Fe
+rnandes', 'denners777@hotmail.com', bcrypt('123456')])
+=> true
+>>> DB::select('SELECT * FROM users WHERE id = :id', ['id' => 1])
+=> [
+     {#658
+       +"id": 1,
+       +"name": "Denner Fernandes",
+       +"email": "denners777@hotmail.com",
+       +"password": "$2y$10$keNUocSts0PhC2QjK9Iwt.PSdm517GpRGFvvrtFZBBKs9B
+gTp2UYe",
+       +"remember_token": null,
+       +"created_at": null,
+       +"updated_at": null,
+     },
+   ]
+>>> DB::update('UPDATE users SET name = :name WHERE id = :id', ['name' => 'Denner Fernan
+des da Silva', 'id' => 1])
+=> 1
+>>> DB::select('SELECT * FROM users WHERE id = :id', ['id' => 1])
+=> [
+     {#659
+       +"id": 1,
+       +"name": "Denner Fernandes da Silva",
+       +"email": "denners777@hotmail.com",
+       +"password": "$2y$10$keNUocSts0PhC2QjK9Iwt.PSdm517GpRGFvvrtFZBBKs9B
+gTp2UYe",
+       +"remember_token": null,
+       +"created_at": null,
+       +"updated_at": null,
+     },
+   ]
+>>> DB::delete('DELETE FROM users WHERE id = :id', ['id' => 1])
+=> 1
+>>> DB::select('SELECT * FROM users WHERE id = :id', ['id' => 1])
+=> []
+>>> DB::statement('DROP TABLE users')
+=> true
+>>> DB::connection('sqlite')->select()
