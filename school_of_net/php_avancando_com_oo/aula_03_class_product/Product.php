@@ -1,0 +1,26 @@
+<?php
+
+class Product
+{
+
+    private $db;
+
+    public function __construct($db)
+    {
+        $this->db = $db;
+
+    }
+
+    public function lister()
+    {
+        $query = 'SELECT * FROM products';
+
+        $stmt = $this->db->prepare($query);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
+
+}
