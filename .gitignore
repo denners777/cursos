@@ -11,7 +11,7 @@ Homestead.yaml
 
 ### Laravel ###
 /bootstrap/compiled.php
-/vendor
+vendor/
 /node_modules
 Homestead.yaml
 Homestead.json
