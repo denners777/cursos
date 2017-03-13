@@ -1,7 +1,20 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+module.exports = function (grunt) {
 
+    grunt.initConfig({
+        uglify: {
+            options: {
+                mangle: false
+            },
+            file_min_js: {
+                files: {
+                    'assets/js/main.min.js': ['assets/_js/main.js']
+                }
+            }
+        } //uglify
+    });
 
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.registerTask('default', ['uglify']);
+
+};
