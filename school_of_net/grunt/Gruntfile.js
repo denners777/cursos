@@ -10,11 +10,22 @@ module.exports = function (grunt) {
                     'assets/js/main.min.js': ['assets/_js/main.js']
                 }
             }
-        } //uglify
+        }, //uglify
+        sass: {
+            dist: {
+                options: {
+                    style: 'compress'
+                },
+                files: {
+                    'assets/css/style.min.css': 'assets/_sass/style.scss'
+                }
+            }
+        }, //sass
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['uglify', 'sass']);
 
 };
