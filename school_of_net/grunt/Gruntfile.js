@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         watch: {
             dist: {
                 files: ['assets/_js/**/*', 'assets/_sass/**/*'],
-                tasks: ['uglify', 'sass'],
+                tasks: ['concat', 'uglify', 'sass'],
             },
         }, //watch
         shell: {
@@ -36,18 +36,26 @@ module.exports = function (grunt) {
                     return 'mkdir ' + dir;
                 }
             }
-        }
+        }, //shell
+        concat: {
+            js: {
+                src: 'assets/_js/_src/*.js',
+                dest: 'assets/_js/main.js',
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     grunt.registerTask('default', ['uglify', 'sass']);
     grunt.registerTask('w', ['watch']);
     grunt.registerTask('mk', function (dir) {
         grunt.task.run('shell:mkdir:' + dir);
     });
+    grunt.registerTask('c', ['concat']);
 
 };
