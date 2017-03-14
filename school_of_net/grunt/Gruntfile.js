@@ -27,13 +27,27 @@ module.exports = function (grunt) {
                 tasks: ['uglify', 'sass'],
             },
         }, //watch
+        shell: {
+            options: {
+                stderr: false
+            },
+            mkdir: {
+                command: function (dir) {
+                    return 'mkdir ' + dir;
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', ['uglify', 'sass']);
     grunt.registerTask('w', ['watch']);
+    grunt.registerTask('mk', function (dir) {
+        grunt.task.run('shell:mkdir:' + dir);
+    });
 
 };
