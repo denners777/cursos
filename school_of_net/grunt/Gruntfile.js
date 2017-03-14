@@ -21,11 +21,19 @@ module.exports = function (grunt) {
                 }
             }
         }, //sass
+        watch: {
+            dist: {
+                files: ['assets/_js/**/*', 'assets/_sass/**/*'],
+                tasks: ['uglify', 'sass'],
+            },
+        }, //watch
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['uglify', 'sass']);
+    grunt.registerTask('w', ['watch']);
 
 };
