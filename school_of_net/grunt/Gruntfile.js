@@ -26,6 +26,9 @@ module.exports = function (grunt) {
     }, //sass
     watch: {
       dist: {
+        options: {
+          livereload: true,
+        },
         files: ['assets/_js/**/*', 'assets/_sass/**/*', '_index.html', 'assets/_img/**/*'],
         tasks: ['concat', 'uglify', 'sass', 'htmlmin'],
       },
@@ -78,6 +81,7 @@ module.exports = function (grunt) {
           port: 8000,
           hostname: '*',
           keepalive: false,
+          livereload: true
         }
       }
     }
