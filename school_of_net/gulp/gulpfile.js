@@ -1,5 +1,12 @@
-var gulp = require('gulp');
+'use strict';
 
-gulp.task('default', function(){
-  
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+
+gulp.task('sass', function () {
+  return gulp.src('assets/src/sass/**/*.scss')
+          .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+          .pipe(gulp.dest('assets/css'));
 });
+
+gulp.task('default', ['sass']);
