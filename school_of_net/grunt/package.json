@@ -6,9 +6,20 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-shell": "^2.1.0"
+    "grunt-shell": "^2.1.0",
+    "imagemin": "^5.2.2",
+    "imagemin-mozjpeg": "^6.0.0"
+  },
+  "dependencies":{
+    "imagemin": "^4.0.0",
+    "vinyl-fs": "2.2.1",
+    "imagemin-jpegoptim": "^5.0.0",
+    "imagemin-mozjpeg": "5.1.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-pngquant": "4.1.0"
   }
 }
