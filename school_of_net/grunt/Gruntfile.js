@@ -26,8 +26,8 @@ module.exports = function (grunt) {
     }, //sass
     watch: {
       dist: {
-        files: ['assets/_js/**/*', 'assets/_sass/**/*'],
-        tasks: ['concat', 'uglify', 'sass'],
+        files: ['assets/_js/**/*', 'assets/_sass/**/*', '_index.html', 'assets/_img/**/*'],
+        tasks: ['concat', 'uglify', 'sass', 'htmlmin', 'imagemin'],
       },
     }, //watch
     shell: {
@@ -61,6 +61,17 @@ module.exports = function (grunt) {
           }]
       }
     }, //imagemin
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'index.html': '_index.html', 
+        }
+      },
+    }, //htmlmin
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -69,13 +80,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-  grunt.registerTask('default', ['uglify', 'sass']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'htmlmin', 'imagemin']);
   grunt.registerTask('w', ['watch']);
   grunt.registerTask('mk', function (dir) {
     grunt.task.run('shell:mkdir:' + dir);
   });
   grunt.registerTask('c', ['concat']);
   grunt.registerTask('img', ['imagemin']);
+  grunt.registerTask('html', ['htmlmin']);
 
 };
