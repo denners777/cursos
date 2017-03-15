@@ -27,7 +27,7 @@ module.exports = function (grunt) {
     watch: {
       dist: {
         files: ['assets/_js/**/*', 'assets/_sass/**/*', '_index.html', 'assets/_img/**/*'],
-        tasks: ['concat', 'uglify', 'sass', 'htmlmin', 'imagemin'],
+        tasks: ['concat', 'uglify', 'sass', 'htmlmin'],
       },
     }, //watch
     shell: {
@@ -68,10 +68,19 @@ module.exports = function (grunt) {
           collapseWhitespace: true
         },
         files: {
-          'index.html': '_index.html', 
+          'index.html': '_index.html',
         }
       },
     }, //htmlmin
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          hostname: '*',
+          keepalive: false,
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -81,6 +90,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'htmlmin', 'imagemin']);
   grunt.registerTask('w', ['watch']);
@@ -90,5 +100,6 @@ module.exports = function (grunt) {
   grunt.registerTask('c', ['concat']);
   grunt.registerTask('img', ['imagemin']);
   grunt.registerTask('html', ['htmlmin']);
+  grunt.registerTask('serve', ['connect', 'watch']);
 
 };
