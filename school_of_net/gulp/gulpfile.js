@@ -5,11 +5,7 @@ var gulp = require('gulp'),
         concat = require('gulp-concat'),
         uglify = require('gulp-uglify'),
         imagemin = require('gulp-imagemin'),
-        pngquant = require('imagemin-pngquant'),
-        imageminGifsicle = require('imagemin-gifsicle'),
-        imageminJpegtran = require('imagemin-jpegtran'),
-        imageminOptipng = require('imagemin-optipng'),
-        imageminSvgo = require('imagemin-svgo');
+        pngquant = require('imagemin-pngquant');
 
 gulp.task('default', ['sass', 'js', 'image']);
 
@@ -32,17 +28,7 @@ gulp.task('image', function () {
           .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
-            use: [
-              pngquant(),
-              imageminGifsicle(),
-              imageminJpegtran(),
-              imageminOptipng(),
-              imageminSvgo({
-                plugins: [
-                  {removeViewBox: false}
-                ]
-              }),
-            ]
+            use: [pngquant()]
           }))
           .pipe(gulp.dest('assets/img'));
 });
