@@ -2,7 +2,8 @@
 
 var gulp = require('gulp'),
         sass = require('gulp-sass'),
-        concat = require('gulp-concat');
+        concat = require('gulp-concat'),
+        uglify = require('gulp-uglify');
 
 gulp.task('sass', function () {
   return gulp.src('assets/src/sass/**/*.scss')
@@ -11,4 +12,11 @@ gulp.task('sass', function () {
           .pipe(gulp.dest('assets/css'));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('js', function () {
+  return gulp.src('assets/src/js/**/*.js')
+          .pipe(concat('script.min.js'))
+          .pipe(uglify())
+          .pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('default', ['sass', 'js']);
