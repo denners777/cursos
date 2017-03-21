@@ -8,7 +8,7 @@ var gulp = require('gulp'),
         pngquant = require('imagemin-pngquant'),
         htmlmin = require('gulp-htmlmin');
 
-gulp.task('default', ['sass', 'js', 'htmlmin', 'image']);
+gulp.task('default', ['sass', 'js', 'htmlmin', 'image', 'wacth']);
 
 gulp.task('sass', function () {
   return gulp.src('assets/src/sass/**/*.scss')
@@ -38,4 +38,11 @@ gulp.task('htmlmin', function () {
   return gulp.src('_html/**/*.html')
           .pipe(htmlmin({collapseWhitespace: true}))
           .pipe(gulp.dest('.'));
+});
+
+gulp.task('wacth', function () {
+  gulp.watch('assets/src/sass/**/*.scss', ['sass']);
+  gulp.watch('assets/src/js/**/*.js', ['js']);
+  gulp.watch('assets/src/img/*', ['image']);
+  gulp.watch('_html/**/*.html', ['htmlmin']);
 });
