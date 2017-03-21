@@ -6,9 +6,10 @@ var gulp = require('gulp'),
         uglify = require('gulp-uglify'),
         imagemin = require('gulp-imagemin'),
         pngquant = require('imagemin-pngquant'),
-        htmlmin = require('gulp-htmlmin');
+        htmlmin = require('gulp-htmlmin'),
+        gls = require('gulp-live-server');
 
-gulp.task('default', ['sass', 'js', 'htmlmin', 'image', 'wacth']);
+gulp.task('default', ['sass', 'js', 'htmlmin', 'image', 'wacth', 'serve']);
 
 gulp.task('sass', function () {
   return gulp.src('assets/src/sass/**/*.scss')
@@ -45,4 +46,21 @@ gulp.task('wacth', function () {
   gulp.watch('assets/src/js/**/*.js', ['js']);
   gulp.watch('assets/src/img/*', ['image']);
   gulp.watch('_html/**/*.html', ['htmlmin']);
+});
+
+gulp.task('serve', function () {
+  var server = gls.static('./', 8000);
+  server.start();
+  gulp.watch('assets/css/**/*.css', function (file) {
+    gls.notify.apply(server, [file]);
+  });
+  gulp.watch('assets/js/**/*.js', function (file) {
+    gls.notify.apply(server, [file]);
+  });
+  gulp.watch('assets/img/**/*', function (file) {
+    gls.notify.apply(server, [file]);
+  });
+  gulp.watch('./*.html', function (file) {
+    gls.notify.apply(server, [file]);
+  });
 });
