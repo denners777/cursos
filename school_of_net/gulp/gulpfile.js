@@ -5,9 +5,10 @@ var gulp = require('gulp'),
         concat = require('gulp-concat'),
         uglify = require('gulp-uglify'),
         imagemin = require('gulp-imagemin'),
-        pngquant = require('imagemin-pngquant');
+        pngquant = require('imagemin-pngquant'),
+        htmlmin = require('gulp-htmlmin');
 
-gulp.task('default', ['sass', 'js', 'image']);
+gulp.task('default', ['sass', 'js', 'htmlmin', 'image']);
 
 gulp.task('sass', function () {
   return gulp.src('assets/src/sass/**/*.scss')
@@ -31,4 +32,10 @@ gulp.task('image', function () {
             use: [pngquant()]
           }))
           .pipe(gulp.dest('assets/img'));
+});
+
+gulp.task('htmlmin', function () {
+  return gulp.src('_html/**/*.html')
+          .pipe(htmlmin({collapseWhitespace: true}))
+          .pipe(gulp.dest('.'));
 });
