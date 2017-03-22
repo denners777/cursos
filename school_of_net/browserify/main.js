@@ -1,17 +1,32 @@
-var num1 = prompt('Number 1:');
-var num2 = prompt('Number 2:');
+let number1 = prompt('Number 1:');
+let number2 = prompt('Number 2:');
+const op = prompt('Operation:')
+const result = 0;
 
-var op = prompt('Operation:');
+number1 = parseInt(number1);
+number2 = parseInt(number2);
 
-var result = 0;
-num1 = parseInt(num1);
-num2 = parseInt(num2);
+let operations = {
+  '+': require('./sum'),
+  '-': require('./sub'),
+  '*': require('./mult'),
+  '/': require('./div'),
+};
 
-if (op == '+') {
-  result = num1 + num2
+/*function sum(n1, n2) {
+  return n1 + n2;
 }
 
-if (op == '-') {
-  result = num1 - num2
+function sub(n1, n2) {
+  return n1 - n2;
 }
-module.exports = result;
+
+function mult(n1, n2) {
+  return n1 * n2;
+}
+
+function div(n1, n2) {
+  return n1 / n2;
+}*/
+
+console.log(operations[op](number1, number2));
