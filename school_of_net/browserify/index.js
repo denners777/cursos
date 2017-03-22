@@ -1,3 +1,1 @@
-var teams = require('./teams');
-
-console.log(teams());
+console.log(require('./main.js'));
