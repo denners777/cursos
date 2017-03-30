@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babelify": "^7.3.0"
+    "babelify": "^7.3.0",
+    "sassify": "^2.0.0"
   }
 }

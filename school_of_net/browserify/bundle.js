@@ -8,6 +8,8 @@ let number2 = prompt('Number 2:');
 const op = prompt('Operation:')
 const result = 0;
 
+require('./main.scss');
+
 number1 = parseInt(number1);
 number2 = parseInt(number2);
 
@@ -18,35 +20,19 @@ let operations = {
   '/': require('./div'),
 };
 
-/*function sum(n1, n2) {
-  return n1 + n2;
-}
-
-function sub(n1, n2) {
-  return n1 - n2;
-}
-
-function mult(n1, n2) {
-  return n1 * n2;
-}
-
-function div(n1, n2) {
-  return n1 / n2;
-}*/
-
 console.log(operations[op](number1, number2));
-},{"./div":1,"./mult":3,"./sub":4,"./sum":5}],3:[function(require,module,exports){
-module.exports = (n1, n2) => {
-  return n1 * n2;
-};
+},{"./div":1,"./main.scss":3,"./mult":4,"./sub":5,"./sum":6}],3:[function(require,module,exports){
+module.exports = "body h1 {\n  color: red; }\n\nbody {\n  background-color: #000000; }\n";
 },{}],4:[function(require,module,exports){
 module.exports = (n1, n2) => {
-  return n1 - n2;
+  return n1 * n2;
 };
 },{}],5:[function(require,module,exports){
 module.exports = (n1, n2) => {
-  return n1 + n2;
+  return n1 - n2;
 };
 },{}],6:[function(require,module,exports){
-console.log(require('./main.js'));
-},{"./main.js":2}]},{},[6]);
+module.exports = (n1, n2) => {
+  return n1 + n2;
+};
+},{}]},{},[2]);
