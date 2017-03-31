@@ -17,8 +17,8 @@ let operations = {
 
 console.log(operations[op](number1, number2));
 
-var template = require("./custom.hbs");
-document.body.innerHTML = template({name: "Denner"});
+var hbsTemplate = require("./custom.hbs");
+document.body.innerHTML = hbsTemplate({name: "Denner"});
 
 var Handlebars = require('hbsfy/runtime');
 Handlebars.registerHelper('fullName', function(){
