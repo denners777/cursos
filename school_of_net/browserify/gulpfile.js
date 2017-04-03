@@ -1,14 +1,14 @@
 var gulp = require('gulp');
-var b = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var b = require('browserify');
 var hbsfy = require('hbsfy');
 var sassify = require('sassify');
 var babelify = require('babelify');
 
 gulp.task('template', function () {
   var bundler = b('./', {
-    dubug: true,
+    debug: true
   })
           .transform(hbsfy)
           .transform(sassify, {
@@ -17,10 +17,10 @@ gulp.task('template', function () {
             sourceMap: false
           })
           .transform(babelify);
+
   bundler
           .bundle()
           .pipe(source('bundle.js'))
           .pipe(buffer())
           .pipe(gulp.dest('./'));
-
 });
