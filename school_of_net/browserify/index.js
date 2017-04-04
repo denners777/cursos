@@ -26,9 +26,7 @@ angular.module('app', [
             return data = _data;
           }
         })
-        .controller('ListCtrl', function ($scope) {
-
-        })
+        .controller('ListCtrl', require('./list.ctrl'))
         .controller('InsertCtrl', require('./insert.ctrl'))
         .controller('AppCtrl', function ($scope) {
           $scope.test = 'Hello from Angularjs';
