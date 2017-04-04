@@ -2,13 +2,15 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Telephone</th>
+      <th>Telefone</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="item in data">
       <td>{{item.name}}</td>
       <td>{{item.telefone}}</td>
+      <td><button type="button" ng-click="remove(item)">Delete</button></td>
     </tr>
   </tbody>
 </table>
