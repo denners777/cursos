@@ -1,5 +1,5 @@
 <form action="">
-  <input type="text" placeholder="Name">
-  <input type="tel" placeholder="Telephone">
-  <button type="button">Create</button>
+  <input type="text" placeholder="Name" ng-model="form.name">
+  <input type="tel" placeholder="Telephone" ng-model="form.telefone">
+  <button type="button" ng-click="create(form)">Create</button>
 </form>
