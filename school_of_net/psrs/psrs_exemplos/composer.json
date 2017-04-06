@@ -1,6 +1,7 @@
 {
     "require": {
-        "monolog/monolog": "^1.22"
+        "monolog/monolog": "^1.22",
+        "psr/cache-util": "dev-master"
     },
     "autoload": {
         "psr-4": {
