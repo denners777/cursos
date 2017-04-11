@@ -9,7 +9,7 @@
                 <pre>{{ var_dump($errors) }}</pre>
                 <pre>{{ var_dump(session('fail')) }}</pre>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="/auth2/login">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
