@@ -29,6 +29,11 @@ Route::group(['prefix' => 'auth2'], function() {
     Route::get('/logout/', 'Auth2Controller@logout');
 });
 
+Route::group(['prefix' => 'auth/github'], function() {
+    Route::get('/', 'GithubController@redirect');
+    Route::get('/callback', 'GithubController@handle');
+});
+
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index');
 });

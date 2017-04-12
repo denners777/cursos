@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'github' => [
+        'client_id' => '1a324d9c91dbf558d1cb',
+        'client_secret' => '7ec472d5124db2e66192ef7f9d024279cfb2d470',
+        'redirect' => 'http://localhost:8000/auth/github/callback'
+    ]
 ];
