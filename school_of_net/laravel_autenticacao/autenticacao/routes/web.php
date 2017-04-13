@@ -37,3 +37,11 @@ Route::group(['prefix' => 'auth/github'], function() {
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index');
 });
+
+Route::get('auth/{user}', function(App\User $user) {
+    Auth::login($user);
+    return "Autenticated as user #$user->id.";
+});
+
+Route::get('/post', 'PostController@index');
+Route::get('/post/{post}/edit', 'PostController@update');
