@@ -11,7 +11,7 @@
   |
  */
 
-Route::get('/', function() {
+/*Route::get('/', function() {
     return view('welcome');
 });
 
@@ -45,3 +45,11 @@ Route::get('auth/{user}', function(App\User $user) {
 
 Route::get('/post', 'PostController@index');
 Route::get('/post/{post}/edit', 'PostController@update');
+*/
+
+Route::group(['middleware' => ['api', 'auth:api']], function() {
+    Route::get('dashboard', function() {
+        dd(Auth::guard('api')->user());
+        return 'Você está autenticado via token.';
+    });
+});
