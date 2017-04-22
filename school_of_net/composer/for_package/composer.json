@@ -5,7 +5,7 @@
     "version": "1.0",
     "require": {
         "php": ">=5.4",
-        "silex/silex": "1.3.*@stable"
+        "silex/silex": "2.*@stable"
     },
     "license": "MIT",
     "authors": [
