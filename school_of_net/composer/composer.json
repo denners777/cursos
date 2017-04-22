@@ -1,0 +1,20 @@
+{
+    "name": "denners777/phpcoursecomp",
+    "description": "Composer course in SON",
+    "type": "project",
+    "require": {
+        "silex/silex": "2.0*@stable",
+        "doctrine/dbal": "2.5*@stable"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.1*@stable"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denner Fernandes",
+            "email": "denners777@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
