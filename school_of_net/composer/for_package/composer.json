@@ -1,0 +1,23 @@
+{
+    "name": "devdenner/course-composer",
+    "description": "Package test",
+    "type": "library",
+    "version": "1.0",
+    "require": {
+        "php": ">=5.4",
+        "silex/silex": "1.3.*@stable"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denner Fernandes",
+            "email": "denners777@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "devDenner\\SON\\": "src/devDenner/SON"
+        }
+    }
+}
