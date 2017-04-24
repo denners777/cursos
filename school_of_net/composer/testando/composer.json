@@ -1,0 +1,10 @@
+{
+    "require": {
+        "devdenner/course-composer": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
