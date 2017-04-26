@@ -1,4 +1,4 @@
-#História do Git#
+# História do Git
 Neste módulo, faremos uma breve introdução sobre a história do Git.
 
 Esta introdução é importante para que vocês possam entender o contexto e saberem em que nível estamos em relação a controle de versões e tecnologias, no mundo Open Source.

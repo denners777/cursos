@@ -1,4 +1,4 @@
-#Sistema centralizado vs descentralizado#
+# Sistema centralizado vs descentralizado
 Neste módulo falaremos, especificamente, sobre a diferença entre sistema de controle de versão centralizado e descentralizado.
 
 Para começarmos a explicar, podemos falar de dois sistemas: CVS e SVN, ou Subversion. Nestes modelos de sistemas, normalmente, existe um repositório central, que armazenamos todo o código. Quando precisamos fazer alguma alteração, baixamos o código, fazemos a alteração e depois, fazemos um commit. O commit é o momento em que informamos, ao sistema, que estamos gerando uma versão daquela alteração que acabamos de fazer.
