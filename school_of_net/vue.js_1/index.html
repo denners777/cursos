@@ -50,6 +50,21 @@
                 <p :style="[objectA, objectB]">ObjetA adn ObjectB</p>
                 <p v-bind:='{id: 1 === 1, name: true}'>Bind attribute</p>
             </div>
+            <div class="row">
+                <h1>v-model</h1>
+                <ul>
+                    <li v-for="myList in myListForm">
+                        {{ myList.name }} - {{ myList.email }}
+                    </li>
+                </ul>
+                <input type="text" v-model="myForm.name" placeholder="Name" />
+                <input type="email" v-model="myForm.email" placeholder="email" />
+                <button class="btn btn-success" @click="addForm">Add</button>
+            </div>
+<br />
+<br />
+<br />
+<br />
 
         </div>
 
