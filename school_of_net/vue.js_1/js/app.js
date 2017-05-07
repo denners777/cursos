@@ -11,6 +11,13 @@ var hello = new Vue({
         ],
         newElement: '',
         elements: [],
+        objectA: {
+            fontSize: '30px'
+            //ou 'font-size': '30px'
+        },
+        objectB: {
+            color: 'red'
+        }
     },
     methods: {
         addElement: function () {
@@ -27,7 +34,7 @@ var hello = new Vue({
         myClick: function () {
             alert('Click');
         },
-        myKeyUp: function(){
+        myKeyUp: function () {
             alert('myKeyUp');
         }
     }

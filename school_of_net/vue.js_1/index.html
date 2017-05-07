@@ -39,6 +39,18 @@
                 <input type="text" @keyup.enter="myKeyUp" placeholder="myKeyUp.enter" />
                 <input type="text" @keyup.13="myKeyUp" placeholder="myKeyUp.13" />
             </div>
+
+            <div class="row">
+                <h1>v-bind</h1>
+                <p v-bind:class="{ 'text-danger': 1 === 2, 'text-info': true }">Text</p>
+                <p :class="{ 'text-danger': 1 === 1, 'text-info': false }">:Text</p>
+
+                <p :style="{ fontSize:30 + 'px' }">Style</p>
+                <p :style="{ 'font-size':30 + 'px' }">Style</p>
+                <p :style="[objectA, objectB]">ObjetA adn ObjectB</p>
+                <p v-bind:='{id: 1 === 1, name: true}'>Bind attribute</p>
+            </div>
+
         </div>
 
         <script src="node_modules/vue/dist/vue.js"></script>
