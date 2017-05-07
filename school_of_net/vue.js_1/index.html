@@ -31,6 +31,14 @@
                     </li>
                 </ul>
             </div>
+            <div class="row">
+                <h1>v-on</h1>
+                <button class="btn btn-default" v-on:click="myClick">Click</button>
+                <button class="btn btn-default" @click="myClick">@Click</button>
+                <input type="text" @keyup="myKeyUp" placeholder="myKeyUp" />
+                <input type="text" @keyup.enter="myKeyUp" placeholder="myKeyUp.enter" />
+                <input type="text" @keyup.13="myKeyUp" placeholder="myKeyUp.13" />
+            </div>
         </div>
 
         <script src="node_modules/vue/dist/vue.js"></script>
