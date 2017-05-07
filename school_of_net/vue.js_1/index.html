@@ -20,7 +20,16 @@
                         {{ people.name }}
                     </li>
                 </ul>
-
+            </div>
+            <div class="row">
+                <h1>My list elements</h1>
+                <input type="text" class="form-control" v-model="newElement" v-on:keyup.enter="addElement" />
+                <ul>
+                    <li v-for="element in elements" >
+                        {{ element.title }}
+                        <a href="#" v-on:click="removeElement($event, $index)" class="btn btn-danger">X</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
