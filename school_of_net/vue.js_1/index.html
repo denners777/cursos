@@ -29,9 +29,9 @@
                     <tbody>
                         <tr v-for="book in books | filterBy MySearch 'title' 'description'">
                             <td>{{ book.id }}</td>
-                            <td>{{ book.title }}</td>
+                            <td>{{ book.title | uppercase }}</td>
                             <td>{{ book.description }}</td>
-                            <td>{{ book.value }}</td>
+                            <td>{{ book.value | currency 'R$ ' }}</td>
                         </tr>
                     </tbody>
                 </table>
