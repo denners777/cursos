@@ -34,5 +34,113 @@
         "title": "Docker: Up & Running",
         "value": 21.62,
         "description": "Docker is quickly changing the way that organizations are deploying software at scale"
+    },
+    {
+        "id": 7,
+        "title": "Design Patterns",
+        "value": 37000.88,
+        "description": "Elements of Reusable Object-Oriented Software"
+    },
+    {
+        "id": 8,
+        "title": "Clean Code",
+        "value": 32.56,
+        "description": "A Handbook of Agile Software Craftsmanship"
+    },
+    {
+        "id": 9,
+        "title": "Refactoring",
+        "value": 45.42,
+        "description": "Improving the Design of Existing Code"
+    },
+    {
+        "id": 10,
+        "title": "Service Design Patterns",
+        "value": 38.65,
+        "description": "Fundamental Design Solutions for SOAP/WSDL and RESTful Web Services"
+    },
+    {
+        "id": 11,
+        "title": "Building Microservices",
+        "value": 42.34,
+        "description": "Distributed systems have become more fine-grained in the past 10 years"
+    },
+    {
+        "id": 12,
+        "title": "Docker: Up & Running",
+        "value": 21.62,
+        "description": "Docker is quickly changing the way that organizations are deploying software at scale"
+    },
+    {
+        "id": 13,
+        "title": "Design Patterns",
+        "value": 37000.88,
+        "description": "Elements of Reusable Object-Oriented Software"
+    },
+    {
+        "id": 14,
+        "title": "Clean Code",
+        "value": 32.56,
+        "description": "A Handbook of Agile Software Craftsmanship"
+    },
+    {
+        "id": 15,
+        "title": "Refactoring",
+        "value": 45.42,
+        "description": "Improving the Design of Existing Code"
+    },
+    {
+        "id": 16,
+        "title": "Service Design Patterns",
+        "value": 38.65,
+        "description": "Fundamental Design Solutions for SOAP/WSDL and RESTful Web Services"
+    },
+    {
+        "id": 17,
+        "title": "Building Microservices",
+        "value": 42.34,
+        "description": "Distributed systems have become more fine-grained in the past 10 years"
+    },
+    {
+        "id": 18,
+        "title": "Docker: Up & Running",
+        "value": 21.62,
+        "description": "Docker is quickly changing the way that organizations are deploying software at scale"
+    },
+    {
+        "id": 19,
+        "title": "Design Patterns",
+        "value": 37000.88,
+        "description": "Elements of Reusable Object-Oriented Software"
+    },
+    {
+        "id": 20,
+        "title": "Clean Code",
+        "value": 32.56,
+        "description": "A Handbook of Agile Software Craftsmanship"
+    },
+    {
+        "id": 21,
+        "title": "Refactoring",
+        "value": 45.42,
+        "description": "Improving the Design of Existing Code"
+    },
+    {
+        "id": 22,
+        "title": "Service Design Patterns",
+        "value": 38.65,
+        "description": "Fundamental Design Solutions for SOAP/WSDL and RESTful Web Services"
+    },
+    {
+        "id": 23,
+        "title": "Building Microservices",
+        "value": 42.34,
+        "description": "Distributed systems have become more fine-grained in the past 10 years"
+    },
+    {
+        "id": 24,
+        "title": "Docker: Up & Running",
+        "value": 21.62,
+        "description": "Docker is quickly changing the way that organizations are deploying software at scale"
     }
 ]
