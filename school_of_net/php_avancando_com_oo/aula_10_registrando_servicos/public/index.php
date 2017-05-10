@@ -7,7 +7,7 @@ use Pimple\Container;
 $container = new Container();
 
 $container['conn'] = function() {
-    return new \Source\Conn('mysql:host=localhost;dname=test_oo', 'root', '');
+    return new \Source\Conn('mysql:host=localhost;dbname=test_oo', 'root', '');
 };
 
 $container['product'] = function($c) {
