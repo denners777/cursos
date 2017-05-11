@@ -5,11 +5,109 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <style type="text/css">
+            .chat {
+                padding: 0;
+            }
+            .chat li {
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+            .chat li.left .chat-body {
+                margin-left: 100px;
+            }
+            .chat li.right .chat-body {
+                text-align: right;
+                margin-right: 100px;
+            }
+            .panel-body {
+                overflow-y: scroll;
+                height: 400px;
+            }
+        </style>
     </head>
     <body>
-Olá mundo!!!
+        <div class="container">
+            <div class="row">
+                <div id="chat">
+                    <div class="col-md-8">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Chat</div>
+                            <div class="panel-body">
+                                <ul class="chat list-unstyled">
+                                    <li class="left clearfix">
+                                        <span class="pull-left">
+                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Olá, eu sou o Fulano, como você está?</p>
+                                        </div>
+                                    </li>
+                                    <li class="right clearfix">
+                                        <span class="pull-right">
+                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Estou joia, meu nome é Denner Fernandes</p>
+                                        </div>
+                                    </li>
+                                    <li class="left clearfix">
+                                        <span class="pull-left">
+                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Olá, eu sou o Fulano, como você está?</p>
+                                        </div>
+                                    </li>
+                                    <li class="right clearfix">
+                                        <span class="pull-right">
+                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Estou joia, meu nome é Denner Fernandes</p>
+                                        </div>
+                                    </li>
+                                    <li class="left clearfix">
+                                        <span class="pull-left">
+                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Olá, eu sou o Fulano, como você está?</p>
+                                        </div>
+                                    </li>
+                                    <li class="right clearfix">
+                                        <span class="pull-right">
+                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
+                                        </span>
+                                        <div class="chat-body">
+                                            <p>Estou joia, meu nome é Denner Fernandes</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-md" placeholder="Digite sua Mensagem" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success btn-md">Enviar</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
+        <script type="text/javascript">
+            var chat = new Vue({
+                el: '#chat',
+                data: {
+                    message: "Olá Mundo!!!",
+                },
+            });
+        </script>
     </body>
 </html>
