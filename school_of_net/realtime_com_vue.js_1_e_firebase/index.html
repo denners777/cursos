@@ -35,52 +35,13 @@
                             <div class="panel-heading">Chat</div>
                             <div class="panel-body">
                                 <ul class="chat list-unstyled">
-                                    <li class="left clearfix">
-                                        <span class="pull-left">
-                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
+                                    <li class="clearfix" v-for="o in chat.messages" v-bind:class="{ 'left': !isUser(o.email), 'right': isUser(o.email) }">
+                                        <span v-bind:class="{ 'pull-left': !isUser(o.email), 'pull-right': isUser(o.email) }">
+                                            <img v-bind:src="o.photo" class="img-circle" />
                                         </span>
                                         <div class="chat-body">
-                                            <p>Olá, eu sou o Fulano, como você está?</p>
-                                        </div>
-                                    </li>
-                                    <li class="right clearfix">
-                                        <span class="pull-right">
-                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body">
-                                            <p>Estou joia, meu nome é Denner Fernandes</p>
-                                        </div>
-                                    </li>
-                                    <li class="left clearfix">
-                                        <span class="pull-left">
-                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body">
-                                            <p>Olá, eu sou o Fulano, como você está?</p>
-                                        </div>
-                                    </li>
-                                    <li class="right clearfix">
-                                        <span class="pull-right">
-                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body">
-                                            <p>Estou joia, meu nome é Denner Fernandes</p>
-                                        </div>
-                                    </li>
-                                    <li class="left clearfix">
-                                        <span class="pull-left">
-                                            <img src="http://placehold.it/50/000FFF/fff&text=Fulano" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body">
-                                            <p>Olá, eu sou o Fulano, como você está?</p>
-                                        </div>
-                                    </li>
-                                    <li class="right clearfix">
-                                        <span class="pull-right">
-                                            <img src="http://placehold.it/50/FFF000/fff&text=Denner" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body">
-                                            <p>Estou joia, meu nome é Denner Fernandes</p>
+                                            <strong>{{ o.name }}</strong>
+                                            <p>{{ o.text }}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -102,12 +63,38 @@
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
         <script type="text/javascript">
-            var chat = new Vue({
-                el: '#chat',
-                data: {
-                    message: "Olá Mundo!!!",
-                },
-            });
+var chat = new Vue({
+    el: '#chat',
+    data: {
+        user: {
+            name: 'Denner Fernandes',
+            email: 'denners777@hotmail.com',
+        },
+        chat: {
+            messages: [{
+                    text: "Olá, eu sou o Fulano, como você está?",
+                    name: "Fulano",
+                    email: "fulano@gmail.com",
+                    photo: "http://placehold.it/50/000FFF/fff&text=Fulano",
+                }, {
+                    text: "Estou joia, meu nome é Denner Fernandes",
+                    name: "Denner Fernandes",
+                    email: "denners777@hotmail.com",
+                    photo: "http://placehold.it/50/FFF000/fff&text=Denner",
+                }, {
+                    text: "Não te conheço!!!",
+                    name: "Denner Fernandes",
+                    email: "denners777@hotmail.com",
+                    photo: "http://placehold.it/50/FFF000/fff&text=Denner",
+                }],
+        },
+    },
+    methods: {
+        isUser: function (email) {
+            return this.user.email == email;
+        }
+    },
+});
         </script>
     </body>
 </html>
