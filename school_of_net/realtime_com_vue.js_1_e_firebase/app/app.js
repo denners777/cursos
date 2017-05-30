@@ -79,16 +79,45 @@ name: 'Denner Fernandes',
         }
         },
         });
+        var roomsComponent = Vue.extend({
+        template: `
+            <div class="col-md-4" v-for="o in rooms">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ o.name }}</div>
+                    <div class="panel-body">
+                        {{ o.description }}
+                        <br />
+                        <a href="javascript:void(0);" class="btn btn-primary" @click="goToChat(o)">Entrar</a>
+                    </div>
+                </div>
+            </div>
+`,
+                data: function(){
+                return {
+                rooms: [
+                {id: "001", name: "PHP", description: "Entusiasta do PHP"},
+                {id: "002", name: "Java", description: "Developer experts"},
+                {id: "003", name: "C#", description: "Os caras do C#"},
+                {id: "004", name: "C++", description: "Fissurados por programação"},
+                {id: "005", name: "Javascript", description: "Olha a web aí!"},
+                {id: "006", name: "Vue.js", description: "Chat dos caras do data-binding"},
+                ],
+                };
+                },
+                methods:{
+                goToChat: function(room){
+                this.$route.router.go('/chat/' + room.id);
+                },
+                }
+        });
         var appComponent = Vue.extend({});
-        Vue.component('my-chat', chatComponent);
-        /*var chat = new Vue({
-         el: '#chat',
-         });*/
-
         var router = new VueRouter();
         router.map({
-        '/chat': {
-        componetnt: chatComponent,
+        '/chat/:room': {
+        component: chatComponent,
         },
+                '/rooms': {
+                component: roomsComponent,
+                },
         });
         router.start(appComponent, '#app');
