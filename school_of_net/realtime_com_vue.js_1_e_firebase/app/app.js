@@ -1,5 +1,16 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCo_coUzLEJGVyM-HiAG7lZX32f9ETzOiM",
+    authDomain: "vuejs-firebase-ce24d.firebaseapp.com",
+    databaseURL: "https://vuejs-firebase-ce24d.firebaseio.com",
+    projectId: "vuejs-firebase-ce24d",
+    storageBucket: "vuejs-firebase-ce24d.appspot.com",
+    messagingSenderId: "98058674437"
+};
+var firebaseApp = firebase.initializeApp(config);
+
 var chatComponent = Vue.extend({
-template: `
+    template: `
 <style type="text/css" scoped>
 div{
         color: red;
@@ -47,40 +58,41 @@ div{
         </div>
     </div>
 </div>
-`, data: function(){
-return {
-user: {
-name: 'Denner Fernandes',
-        email: 'denners777@hotmail.com',
-        },
-        chat: {
-        messages: [{
-        text: "Olá, eu sou o Fulano, como você está?",
-                name: "Fulano",
-                email: "fulano@gmail.com",
-                photo: "http://placehold.it/50/000FFF/fff&text=Fulano",
-        }, {
-        text: "Estou joia, meu nome é Denner Fernandes",
-                name: "Denner Fernandes",
-                email: "denners777@hotmail.com",
-                photo: "http://placehold.it/50/FFF000/fff&text=Denner",
-        }, {
-        text: "Não te conheço!!!",
-                name: "Denner Fernandes",
-                email: "denners777@hotmail.com",
-                photo: "http://placehold.it/50/FFF000/fff&text=Denner",
-        }],
-        },
+`, data: function () {
+        return {
+            user: {
+                name: 'Denner Fernandes',
+                email: 'denners777@hotmail.com',
+            },
+            chat: {
+                messages: [{
+                        text: "Olá, eu sou o Fulano, como você está?",
+                        name: "Fulano",
+                        email: "fulano@gmail.com",
+                        photo: "http://placehold.it/50/000FFF/fff&text=Fulano",
+                    }, {
+                        text: "Estou joia, meu nome é Denner Fernandes",
+                        name: "Denner Fernandes",
+                        email: "denners777@hotmail.com",
+                        photo: "http://placehold.it/50/FFF000/fff&text=Denner",
+                    }, {
+                        text: "Não te conheço!!!",
+                        name: "Denner Fernandes",
+                        email: "denners777@hotmail.com",
+                        photo: "http://placehold.it/50/FFF000/fff&text=Denner",
+                    }],
+            },
         }
-},
-        methods: {
+    },
+    methods: {
         isUser: function (email) {
-        return this.user.email == email;
+            return this.user.email == email;
         }
-        },
-        });
-        var roomsComponent = Vue.extend({
-        template: `
+    },
+});
+var db = firebaseApp.database();
+var roomsComponent = Vue.extend({
+    template: `
             <div class="col-md-4" v-for="o in rooms">
                 <div class="panel panel-primary">
                     <div class="panel-heading">{{ o.name }}</div>
@@ -91,33 +103,47 @@ name: 'Denner Fernandes',
                     </div>
                 </div>
             </div>
+            <input type='text' v-model='text' @keyup.enter='insertData' />
+            <ul>
+            <li v-for='o in array'>
+                {{ o.text }}
+            </li>
+            </ul>
 `,
-                data: function(){
-                return {
-                rooms: [
+    firebase: {
+        array: db.ref('array'),
+    },
+    data: function () {
+        return {
+            rooms: [
                 {id: "001", name: "PHP", description: "Entusiasta do PHP"},
                 {id: "002", name: "Java", description: "Developer experts"},
                 {id: "003", name: "C#", description: "Os caras do C#"},
                 {id: "004", name: "C++", description: "Fissurados por programação"},
                 {id: "005", name: "Javascript", description: "Olha a web aí!"},
                 {id: "006", name: "Vue.js", description: "Chat dos caras do data-binding"},
-                ],
-                };
-                },
-                methods:{
-                goToChat: function(room){
-                this.$route.router.go('/chat/' + room.id);
-                },
-                }
-        });
-        var appComponent = Vue.extend({});
-        var router = new VueRouter();
-        router.map({
-        '/chat/:room': {
-        component: chatComponent,
+            ],
+        };
+    },
+    methods: {
+        goToChat: function (room) {
+            this.$route.router.go('/chat/' + room.id);
         },
-                '/rooms': {
-                component: roomsComponent,
-                },
-        });
-        router.start(appComponent, '#app');
+        insertData: function () {
+            this.$firebaseRefs.array.push({
+                text: this.text,
+            });
+        }
+    }
+});
+var appComponent = Vue.extend({});
+var router = new VueRouter();
+router.map({
+    '/chat/:room': {
+        component: chatComponent,
+    },
+    '/rooms': {
+        component: roomsComponent,
+    },
+});
+router.start(appComponent, '#app');
