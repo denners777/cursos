@@ -12,9 +12,6 @@
     var chatComponent = Vue.extend({
         template: `
         <style type="text/css" scoped>
-        div{
-            color: red;
-        }
         .chat {
             padding: 0;
         }
@@ -93,6 +90,13 @@
         methods: {
             isUser: function (email) {
                 return this.user.email == email;
+            },
+            sendMessage: function(){
+                this.$firebaseRefs.messages.push({
+                    name: this.user.name,
+                    email: this.user.email,
+                    text: this.message,
+                });
             }
         },
     });
