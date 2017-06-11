@@ -63,9 +63,9 @@
         data: function () {
             return {
                 user: {
-                    name: 'Denner Fernandes',
-                    email: 'denners777@hotmail.com',
-                    photo: '',
+                    name: localStorage.getItem('name'),
+                    email: localStorage.getItem('email'),
+                    photo: localStorage.getItem('photo'),
                 },
                 message: '',
             }
@@ -137,6 +137,7 @@
                 ],
                 name: '',
                 email: '',
+                room: null
             };
         },
         methods: {
@@ -145,9 +146,10 @@
                 localStorage.setItem('email', this.email);
                 localStorage.setItem('photo', 'http://www.gravatar.com/avatar/' + md5(this.email) + '.jpg');
                 $('#modalLoginEmail').modal('hide');
-                this.$route.router.go('/chat/' + room.id);
+                this.$route.router.go('/chat/' + this.room.id);
             },
              openModal: function (room) {
+                this.room = room;
                 $('#modalLoginEmail').modal('show');
             },
         }
