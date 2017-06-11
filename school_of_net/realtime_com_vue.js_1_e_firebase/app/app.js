@@ -48,7 +48,7 @@
             </div>
             <div class="panel-footer">
                 <div class="input-group">
-                    <input type="text" class="form-control input-md" placeholder="Digite sua Mensagem" v-model="message" />
+                    <input type="text" class="form-control input-md" placeholder="Digite sua Mensagem" v-model="message" @keyup.enter="sendMessage" />
                     <span class="input-group-btn">
                         <button class="btn btn-success btn-md" @click="sendMessage">Enviar</button>
                     </span>
@@ -59,32 +59,16 @@
         created: function(){
             var roomRef = 'chat/rooms/' + this.$route.params.room;
             this.$bindAsArray('messages', db.ref(roomRef + '/messages'));
+            this.$set('user.photo', 'http://www.gravatar.com/avatar/' + md5(this.user.email) + '.jpg');
         },
         data: function () {
             return {
                 user: {
                     name: 'Denner Fernandes',
                     email: 'denners777@hotmail.com',
+                    photo: '',
                 },
                 message: '',
-               /* chat: {
-                    messages: [{
-                        text: "Olá, eu sou o Fulano, como você está?",
-                        name: "Fulano",
-                        email: "fulano@gmail.com",
-                        photo: "http://placehold.it/50/000FFF/fff&text=Fulano",
-                    }, {
-                        text: "Estou joia, meu nome é Denner Fernandes",
-                        name: "Denner Fernandes",
-                        email: "denners777@hotmail.com",
-                        photo: "http://placehold.it/50/FFF000/fff&text=Denner",
-                    }, {
-                        text: "Não te conheço!!!",
-                        name: "Denner Fernandes",
-                        email: "denners777@hotmail.com",
-                        photo: "http://placehold.it/50/FFF000/fff&text=Denner",
-                    }],
-                },*/
             }
         },
         methods: {
@@ -95,6 +79,7 @@
                 this.$firebaseRefs.messages.push({
                     name: this.user.name,
                     email: this.user.email,
+                    photo: this.user.photo,
                     text: this.message,
                 });
             }
