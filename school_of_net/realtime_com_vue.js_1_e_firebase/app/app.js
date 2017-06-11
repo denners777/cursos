@@ -8,7 +8,7 @@
         messagingSenderId: "98058674437"
     };
     var firebaseApp = firebase.initializeApp(config);
-
+    var db = firebaseApp.database();
     var chatComponent = Vue.extend({
         template: `
         <style type="text/css" scoped>
@@ -35,36 +35,42 @@
         }
         </style>
         <div class="panel panel-primary">
-        <div class="panel-heading">Chat</div>
-        <div class="panel-body">
-        <ul class="chat list-unstyled">
-        <li class="clearfix" v-for="o in chat.messages" v-bind:class="{ 'left': !isUser(o.email), 'right': isUser(o.email) }">
-        <span v-bind:class="{ 'pull-left': !isUser(o.email), 'pull-right': isUser(o.email) }">
-        <img v-bind:src="o.photo" class="img-circle" />
-        </span>
-        <div class="chat-body">
-        <strong>{{ o.name }}</strong>
-        <p>{{ o.text }}</p>
+            <div class="panel-heading">Chat</div>
+            <div class="panel-body">
+                <ul class="chat list-unstyled">
+                    <li class="clearfix" v-for="o in messages" v-bind:class="{ 'left': !isUser(o.email), 'right': isUser(o.email) }">
+                        <span v-bind:class="{ 'pull-left': !isUser(o.email), 'pull-right': isUser(o.email) }">
+                            <img v-bind:src="o.photo" class="img-circle" />
+                        </span>
+                        <div class="chat-body">
+                            <strong>{{ o.name }}</strong>
+                            <p>{{ o.text }}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control input-md" placeholder="Digite sua Mensagem" v-model="message" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-success btn-md" @click="sendMessage">Enviar</button>
+                    </span>
+                </div>
+            </div>
         </div>
-        </li>
-        </ul>
-        </div>
-        <div class="panel-footer">
-        <div class="input-group">
-        <input type="text" class="form-control input-md" placeholder="Digite sua Mensagem" />
-        <span class="input-group-btn">
-        <button class="btn btn-success btn-md">Enviar</button>
-        </span>
-        </div>
-        </div>
-        </div>
-        `, data: function () {
+        `, 
+        created: function(){
+            var roomRef = 'chat/rooms/' + this.$route.params.room;
+            this.$bindAsArray('messages', db.ref(roomRef + '/messages'));
+        },
+        data: function () {
             return {
                 user: {
                     name: 'Denner Fernandes',
                     email: 'denners777@hotmail.com',
                 },
-                chat: {
+                message: '',
+               /* chat: {
                     messages: [{
                         text: "Olá, eu sou o Fulano, como você está?",
                         name: "Fulano",
@@ -81,7 +87,7 @@
                         email: "denners777@hotmail.com",
                         photo: "http://placehold.it/50/FFF000/fff&text=Denner",
                     }],
-                },
+                },*/
             }
         },
         methods: {
@@ -90,7 +96,7 @@
             }
         },
     });
-    var db = firebaseApp.database();
+    
     var roomsComponent = Vue.extend({
         template: `
         <div class="col-md-4" v-for="o in rooms">
@@ -103,15 +109,9 @@
         </div>
         </div>
         </div>
-        <input type='text' v-model='text' @keyup.enter='insertData' />
-        <ul>
-        <li v-for='o in array'>
-        {{o.text}} <!-- - {{ o['.value'] }} - {{ o['.key'] }} -->
-        </li>
-        </ul>
         `,
         firebase: {
-            array: db.ref('array'),
+            array: db.ref('chat/rooms'),
         },
         data: function () {
             return {
@@ -129,11 +129,6 @@
             goToChat: function (room) {
                 this.$route.router.go('/chat/' + room.id);
             },
-            insertData: function () {
-                this.$firebaseRefs.array.push({
-                    text: this.text,
-                });
-            }
         }
     });
 
