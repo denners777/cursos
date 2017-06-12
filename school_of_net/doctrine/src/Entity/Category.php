@@ -17,7 +17,7 @@ class Category
     private $id;
 
     /**
-     * @Column(type="string", length=100)
+     * @Column(name="name", type="string", length=100)
      */
     private $name;
 
