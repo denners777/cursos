@@ -3,7 +3,7 @@
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
 // replace with file to your own project bootstrap
-require_once _DIR_ . '/src/Doctrine.php';
+require_once __DIR__ . '/src/Doctrine.php';
 
 // replace with mechanism to retrieve EntityManager in your app
 $entityManager = getEntityManager();

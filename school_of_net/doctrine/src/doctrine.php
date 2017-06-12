@@ -3,7 +3,7 @@
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
-$paths     = [_DIR_ . '/Entity'];
+$paths     = [__DIR__ . '/Entity'];
 $isDevMode = true;
 $dbParams  = [
     'driver'   => 'pdo_mysql',
