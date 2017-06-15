@@ -8,7 +8,7 @@ $isDevMode = true;
 $dbParams  = [
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
-    'password' => '.FrmYGb-',
+    'password' => 'root',
     'dbname'   => 'doctrine_basico',
 ];
 
