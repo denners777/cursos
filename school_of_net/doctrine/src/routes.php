@@ -28,6 +28,10 @@ $map->get('categories.list', '/categories', function($request, $response) use($v
                 'categories' => $categories,
     ]);
 });
+$map->get('categories.create', '/categories/create', function($request, $response) use($view) {
+    return $view->render($response, 'categories/create.phtml');
+});
+
 
 $matcher = $routerContainer->getMatcher();
 
