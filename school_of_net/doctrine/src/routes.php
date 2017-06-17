@@ -1,6 +1,7 @@
 <?php
 
 use Aura\Router\RouterContainer;
+use Slim\Views\PhpRenderer;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;
 
@@ -12,9 +13,10 @@ $routerContainer = new RouterContainer();
 
 $map = $routerContainer->getMap();
 
-$map->get('home', '/', function($request, $response) {
-    $response->getBody()->write("Hello World!!!");
-    return $response;
+$view = new PhpRenderer(__DIR__ . '/../templates/');
+
+$map->get('home', '/home', function($request, $response) use($view) {
+    return $view->render($response, 'home.phtml', ['test' => 'Slim PHP view Funcionando']);
 });
 
 $matcher = $routerContainer->getMatcher();
