@@ -18,6 +18,9 @@ $view = new PhpRenderer(__DIR__ . '/../templates/');
 $map->get('home', '/home', function($request, $response) use($view) {
     return $view->render($response, 'home.phtml', ['test' => 'Slim PHP view Funcionando']);
 });
+$map->get('categories.list', '/categories', function($request, $response) use($view) {
+    return $view->render($response, 'categories/list.phtml');
+});
 
 $matcher = $routerContainer->getMatcher();
 
