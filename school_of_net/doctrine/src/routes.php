@@ -4,6 +4,7 @@ use Aura\Router\RouterContainer;
 use Slim\Views\PhpRenderer;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;
+use Psr\Http\Message\ServerRequestInterface;
 use App\Entity\Category;
 
 $request = ServerRequestFactory::fromGlobals(
@@ -11,6 +12,8 @@ $request = ServerRequestFactory::fromGlobals(
 );
 
 $routerContainer = new RouterContainer();
+
+$generator = $routerContainer->getGenerator();
 
 $map = $routerContainer->getMap();
 
@@ -31,7 +34,17 @@ $map->get('categories.list', '/categories', function($request, $response) use($v
 $map->get('categories.create', '/categories/create', function($request, $response) use($view) {
     return $view->render($response, 'categories/create.phtml');
 });
+$map->post('categories.store', '/categories/store', function(ServerRequestInterface$request, $response) use($view, $entityManager, $generator) {
 
+    $data     = $request->getParsedBody();
+    $category = new Category();
+    $category->setName($data['name']);
+    $entityManager->persist($category);
+    $entityManager->flush();
+    $uri      = $generator->generate('categories.list');
+
+    return new Response\RedirectResponse($uri);
+});
 
 $matcher = $routerContainer->getMatcher();
 
@@ -46,4 +59,9 @@ $callable = $route->handler;
 /** @var Response $response */
 $response = $callable($request, new Response());
 
-echo $response->getBody();
+if ($response instanceof Response\RedirectResponse) {
+    header("location:{$response->getHeader('location')[0]}");
+} elseif ($response instanceof Response) {
+    echo $response->getBody();
+}
+
