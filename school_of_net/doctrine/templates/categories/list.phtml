@@ -8,7 +8,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nome</th>
+                    <th>Açoes</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                     <tr>
                         <td><?php echo $category->getId(); ?></td>
                         <td><?php echo $category->getName(); ?></td>
+                        <td><a href="/categories/<?php echo $category->getId(); ?>/edit" class="btn btn-default">Editar</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
