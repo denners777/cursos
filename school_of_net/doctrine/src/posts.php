@@ -46,7 +46,7 @@ $map->post('posts.update', '/posts/{id}/update', function(ServerRequestInterface
 
     $post->setTitle($data['title'])
             ->setContent($data['content']);
-    
+
     $entityManager->flush();
     $uri = $generator->generate('posts.list');
 
@@ -65,3 +65,30 @@ $map->get('posts.remove', '/posts/{id}/remove', function(ServerRequestInterface 
 
     return new Response\RedirectResponse($uri);
 });
+$map->get('posts.categories', '/posts/{id}/categories', function (ServerRequestInterface $request, $response) use ($view, $entityManager) {
+    $id                 = $request->getAttribute('id');
+    $repository         = $entityManager->getRepository(Post::class);
+    $categoryRepository = $entityManager->getRepository(Category::class);
+    $categories         = $categoryRepository->findAll();
+    $post               = $repository->find($id);
+    return $view->render($response, 'posts/categories.phtml', [
+                'post'       => $post,
+                'categories' => $categories
+    ]);
+});
+$map->post('posts.set-categories', '/posts/{id}/set-categories', function(ServerRequestInterface $request, $response) use($view, $entityManager, $generator) {
+    $id         = $request->getAttribute('id');
+    $repository = $entityManager->getRepository(Post::class);
+    $post       = $repository->find($id);
+
+    $data = $request->getParsedBody();
+
+    /*$post->setTitle($data['title'])
+            ->setContent($data['content']);*/
+    var_dump($data); die();
+    $entityManager->flush();
+    $uri = $generator->generate('posts.list');
+
+    return new Response\RedirectResponse($uri);
+});
+
