@@ -46,6 +46,7 @@ $map->post('posts.update', '/posts/{id}/update', function(ServerRequestInterface
 
     $post->setTitle($data['title'])
             ->setContent($data['content']);
+    
     $entityManager->flush();
     $uri = $generator->generate('posts.list');
 

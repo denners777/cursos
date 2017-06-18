@@ -27,6 +27,11 @@ class Post
     private $content;
 
     /**
+     * @ManyToMany(targetEntity="App\Entity\Category")
+     */
+    private $categories;
+
+    /**
      * 
      * @return type
      */
