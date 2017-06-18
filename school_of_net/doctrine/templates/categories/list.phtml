@@ -17,7 +17,10 @@
                     <tr>
                         <td><?php echo $category->getId(); ?></td>
                         <td><?php echo $category->getName(); ?></td>
-                        <td><a href="/categories/<?php echo $category->getId(); ?>/edit" class="btn btn-default">Editar</a></td>
+                        <td>
+                            <a href="/categories/<?php echo $category->getId(); ?>/edit" class="btn btn-default">Editar</a>
+                            <a href="/categories/<?php echo $category->getId(); ?>/remove" class="btn btn-danger">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
