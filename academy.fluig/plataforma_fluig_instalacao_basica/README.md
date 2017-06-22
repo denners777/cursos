@@ -1,4 +1,3 @@
 # Plataforma fluig - Instalação [Curso](http://www.academy.fluig.com/cursos/instalacao "Link para o Curso")
 Destinado aos analistas que farão a instalação e configuração básica do fluig.
 Com ênfase em boas práticas no momento da instalação, este treinamento demonstra como manter instalar seu fluig em sistemas operacionais Windows e Linux, com bancos de dados SQL Server e MySQL, além de mostrar a instalação do fluig Studio, do fluig Connect e também do fluig Mobile.
-[Arquivos do Curso Plataforma fluig - Instalação](https://github.com/denners777/cursos/tree/master/academy.fluig/plataforma_fluig_instalacao_basica "Arquivos do Curso")

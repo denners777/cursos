@@ -1,3 +1,2 @@
 # Banco de dados e Eloquent [Curso](https://www.schoolofnet.com/curso-banco-de-dados-e-eloquent/ "Link para o Curso")
 Tenha todo o controle do seu banco de dados com o Laravel. Neste curso você verá tudo o que precisa saber para criar e editar tabelas, registros, além de entrar com o pé direito no Eloquent, a implementação ActiveRecord do Laravel. Uma solução elegante e flexível para trabalhar com seus Models e seus registros no banco de dados.
-[Arquivos do Curso Banco de dados e Eloquent](https://github.com/denners777/cursos/tree/master/school_of_net/banco_de_dados_e_eloquent "Arquivos do Curso")

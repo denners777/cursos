@@ -1,3 +1,2 @@
 # Laravel - Autenticação [Curso](https://www.schoolofnet.com/curso-laravel-autenticacao/ "Link para o Curso")
 Adicione um sistema de autenticação à sua aplicação Laravel. Neste curso você entenderá os diversos tipos de autenticação que o Laravel dispõe e como aplicá-los em seus projetos.
-[Arquivos do Curso Laravel - Autenticação](https://github.com/denners777/cursos/tree/master/school_of_net/laravel_autenticacao "Arquivos do Curso")

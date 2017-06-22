@@ -1,3 +1,2 @@
 # Iniciando com Laravel [Curso](https://www.schoolofnet.com/curso-iniciando-com-laravel/ "Link para o Curso")
 Dê os primeiros passos em um dos frameworks mais populares do mundo PHP. O Laravel é um dos frameworks com curva de aprendizagem bem baixa, além de ser muito poderoso. Possui uma sintaxe bastante elegante e foi feito para que qualquer desenvolvedor execute seu projeto da forma mais prática possível.
-[Arquivos do Curso Iniciando com Laravel](https://github.com/denners777/cursos/tree/master/school_of_net/iniciando_com_laravel "Arquivos do Curso")
