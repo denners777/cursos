@@ -1,0 +1,3 @@
+# Composer [Curso](https://www.schoolofnet.com/curso-composer/ "Link para o Curso")
+Composer mudou a vida da programação em PHP, unindo a comunidade em torno de uma grande rede de compartilhamento. Bibliotecas e soluções disponíveis para ampliar sistemas contam com um gerenciamento prático e fácil graças ao Composer. Aprenda a trabalhar com o gerenciamento de dependências mais utilizado no mundo PHP e crie um pacote personalizado para compartilhar soluções com programadores do mundo todo. Esse curso aborda aspectos básicos e ensina a como configurar e compartilhar bibliotecas ou pacotes personalizados.
+[Arquivos do Curso Composer](https://github.com/denners777/cursos/tree/master/school_of_net/composer "Arquivos do Curso")

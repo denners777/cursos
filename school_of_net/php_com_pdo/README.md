@@ -1,5 +1,3 @@
-# Anotacoes
-
-> Realizei este curso no final de 2016. Período **conturbado**. :)
->
-> Começo da reciclagem pra web.
+# PHP com PDO [Curso](https://www.schoolofnet.com/curso-php-com-pdo/ "Link para o Curso")
+Se você já iniciou sua jornada com PHP e agora tem o desafio de trabalhar com banco de dados de uma forma profissional , esse curso foi feito para você. O curso trabalhará com banco de dados com PHP e PDO, vai lhe dar uma visão clara do panorama da linguagem PHP em relação ao seu poder de conectividade com banco de dados e ainda lhe passará técnicas de como programar da mesma forma, independente do banco de dados a ser utilizado, recurso esse provido pelo PDO. Além disso pontos referentes a segurança, arquitetura e orientação a objetos serão também cobertos.
+[Arquivos do Curso PHP com PDO](https://github.com/denners777/cursos/tree/master/school_of_net/php_com_pdo "Arquivos do Curso")

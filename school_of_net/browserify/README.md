@@ -1,0 +1,3 @@
+# Browserify [Curso](https://www.schoolofnet.com/curso-browserify/ "Link para o Curso")
+Browserify é uma fantástica ferramenta que veio para mudar a forma com que o front end era tratado. Neste curso, aprenda a como utilizar esta ferramenta que, entre outras coisas, trouxe o Common.js para o Frontend.
+[Arquivos do Curso Browserify](https://github.com/denners777/cursos/tree/master/school_of_net/browserify "Arquivos do Curso")
