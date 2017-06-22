@@ -1,3 +1,2 @@
 # CLOUD FOUNDATION [Curso](http://www.pmgacademy.com/pt/products/curso-online-cloud-computing-foundation "Link para o Curso")
 Este treinamento é oficial, credenciado e homologado pelo EXIN® e tem como objetivo oferecer uma sólida compreensão dos conceitos fundamentais, implantação, arquitetura e desenho da plataforma de computação na nuvem. Cloud Computing significa a prestação de serviços de TI através da Internet. A computação em nuvem deve permitir soluções flexíveis de TI com o objetivo de suportar o negócio, baseada em acordos de serviços claramente definidos.
-[Arquivos do Curso CLOUD FOUNDATION](https://github.com/denners777/cursos/tree/master/pmgacademy/cloud_foundation "Arquivos do Curso")

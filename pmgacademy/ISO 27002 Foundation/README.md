@@ -1,3 +1,2 @@
 # ISO 27002 FOUNDATION [Curso](http://www.pmgacademy.com/pt/products/curso-online-iso-27002-foundation-oficial "Link para o Curso")
 Este treinamento é oficial, credenciado e homologado pelo EXIN® e tem como objetivo de apresentar os requisitos fundamentais da norma NBR ISO/IEC 27002 para um Sistema de Gerenciamento da Segurança da Informação - SGSI, fornecendo aos profissionais de TI um entendimento dos princípios básicos de gestão da segurança da informação, além de preparar o candidato para o exame de certificação da ISO/IEC 27002 Foundation - ISMS (Information Security Management System) da EXIN. 
-[Arquivos do Curso ISO 27002 FOUNDATION](https://github.com/denners777/cursos/tree/master/pmgacademy/ISO%2027002%20Foundation "Arquivos do Curso")

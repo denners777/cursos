@@ -1,4 +1,3 @@
 # Gestão de Processos e Documentos - BPM / ECM [Curso](http://www.academy.fluig.com/cursos/gestao-de-processos-e-documentos-bpm-barra-ecm "Link para o Curso")
 Este treinamento é voltado para profissionais que atuam como desenvolvedores-BPM.
 Tem como finalidade demonstrar o desenvolvimento de componentes necessários para customização de processos, formulários e Integrações no fluig através das linguagens de programação HTML e Javascript.
-[Arquivos do Curso Gestão de Processos e Documentos - BPM / ECM](https://github.com/denners777/cursos/tree/master/academy.fluig/gestao_de_processos_e_documentos_bpm_ecm "Arquivos do Curso")

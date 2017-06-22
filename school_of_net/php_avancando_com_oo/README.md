@@ -1,3 +1,2 @@
 # PHP - Avançando com OO [Curso](https://www.schoolofnet.com/curso-php-avancando-com-oo/ "Link para o Curso")
 Aprenda a criar uma aplicação utilizando os principais conceitos e padrões do PHP Orientado a Objetos. Nesse curso você vai aprender a organizar seu código, abstrair dependências, criar um contêiner de serviços e a utilizar a biblioteca Pimple.
-[Arquivos do Curso PHP - Avançando com OO](https://github.com/denners777/cursos/tree/master/school_of_net/php_avancando_com_oo "Arquivos do Curso")

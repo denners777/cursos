@@ -1,3 +1,2 @@
 # PHP - Iniciando com OO [Curso](https://www.schoolofnet.com/curso-php-iniciando-com-oo/ "Link para o Curso")
 Este curso aborda as principais técnicas e conceitos de Orientação a Objetos, buscando trazer sempre o que há de mais novo no PHP para que você possa trabalhar de forma profissional e efetiva. Indicado para iniciantes e também para você que precisa retomar esses conceitos no PHP.
-[Arquivos do Curso PHP - Iniciando com OO](https://github.com/denners777/cursos/tree/master/school_of_net/php_iniciando_com_oo "Arquivos do Curso")

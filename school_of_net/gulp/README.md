@@ -1,3 +1,2 @@
 # Gulp [Curso](https://www.schoolofnet.com/curso-gulp/ "Link para o Curso")
 Otimize seu ambiente de trabalho com esse automatizador de tarefas rápido e simples de programar. Gulp tem como objetivo otimizar o trabalho com velocidade e simplicidade. Conheça o Gulp e aprenda a configurar as principais tarefas para implementações front-end.
-[Arquivos do Curso Gulp](https://github.com/denners777/cursos/tree/master/school_of_net/gulp "Arquivos do Curso")
