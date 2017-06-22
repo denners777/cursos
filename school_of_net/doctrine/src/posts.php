@@ -77,15 +77,20 @@ $map->get('posts.categories', '/posts/{id}/categories', function (ServerRequestI
     ]);
 });
 $map->post('posts.set-categories', '/posts/{id}/set-categories', function(ServerRequestInterface $request, $response) use($view, $entityManager, $generator) {
-    $id         = $request->getAttribute('id');
-    $repository = $entityManager->getRepository(Post::class);
-    $post       = $repository->find($id);
-
-    $data = $request->getParsedBody();
-
-    /*$post->setTitle($data['title'])
-            ->setContent($data['content']);*/
-    var_dump($data); die();
+    $id                 = $request->getAttribute('id');
+    $data               = $request->getParsedBody();
+    $repository         = $entityManager->getRepository(Post::class);
+    $categoryRepository = $entityManager->getRepository(Category::class);
+    /** @var Post $post */
+    $post               = $repository->find($id);
+    $post->getCategories()->clear();
+    $entityManager->flush();
+    
+    foreach ($data['categories'] as $idCategory){
+        $category = $categoryRepository->find($idCategory);
+        $post->addCategory($category);
+    }
+    
     $entityManager->flush();
     $uri = $generator->generate('posts.list');
 
