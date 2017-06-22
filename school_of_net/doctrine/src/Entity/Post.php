@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @Entity
  * @Table(name="posts")
@@ -30,6 +32,15 @@ class Post
      * @ManyToMany(targetEntity="App\Entity\Category")
      */
     private $categories;
+
+    /**
+     * 
+     */
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+
+    }
 
     /**
      * 
@@ -63,7 +74,7 @@ class Post
 
     /**
      * 
-     * @param type $title
+     * @param mixed $title
      * @return $this
      */
     public function setTitle($title)
@@ -75,13 +86,34 @@ class Post
 
     /**
      * 
-     * @param type $content
+     * @param mixed $content
      * @return $this
      */
     public function setContent($content)
     {
         $this->content = $content;
         return $this;
+
+    }
+
+    /**
+     * 
+     * @param \App\Entity\Category $category
+     * @return $this
+     */
+    public function addCategory(Category $category)
+    {
+        $this->categories->add($category);
+        return $this;
+
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
 
     }
 
