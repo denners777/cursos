@@ -7,7 +7,11 @@ var rooms = [
     { id: "005", name: "Javascript", description: "Olha a web aí!" },
     { id: "006", name: "Vue.js", description: "Chat dos caras do data-binding" },
 ];
+var Vue = require('vue');
+var VueFire = require('vuefire');
 var db = require('./firebase-db');
+
+Vue.use(VueFire);
 
 module.exports = {
     template: `

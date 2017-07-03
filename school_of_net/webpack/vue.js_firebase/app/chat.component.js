@@ -1,4 +1,8 @@
+var Vue = require('vue');
+var VueFire = require('vuefire');
 var db = require('./firebase-db');
+
+Vue.use(VueFire);
 
 module.exports = {
     template: `
