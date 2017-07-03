@@ -1,0 +1,2 @@
+# Realtime com Vue.js 1 e Firebase [Curso](https://www.schoolofnet.com/curso-realtime-com-vuejs-e-firebase/ "Link para o Curso")
+Nesse curso, você aprenderá do zero como criar um chat utilizando os principais recursos do VueJS e ainda conseguir persistir todos os dados no famoso Firebase. Serão utilizados: requirejs, realtime, webcomponents, entre outros.
