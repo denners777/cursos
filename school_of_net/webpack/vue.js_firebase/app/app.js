@@ -1,3 +1,5 @@
+require('./jquery');
+require('bootstrap');
 var db = require('./firebase-db');
 var md5 = require('blueimp-md5');
 var chatComponent = Vue.extend({
