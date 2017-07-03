@@ -1,10 +1,11 @@
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
 require([
-    'vue', 
-    'vue-router', 
     './rooms-create.component', 
     './rooms.component',
     './chat.component'
-    ], function(Vue, VueRouter, RoomsCreateComponent, RoomsComponent, ChatComponent){
+    ], function(RoomsCreateComponent, RoomsComponent, ChatComponent){
 
 Vue.use(VueRouter);
 
