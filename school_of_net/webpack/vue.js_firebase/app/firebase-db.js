@@ -1,5 +1,6 @@
-var firebase = require('firebase');
-var firebaseApp = firebase.initializeApp({
+import Firebase from 'firebase';
+
+var firebaseApp = Firebase.initializeApp({
     apiKey: "AIzaSyCo_coUzLEJGVyM-HiAG7lZX32f9ETzOiM",
     authDomain: "vuejs-firebase-ce24d.firebaseapp.com",
     databaseURL: "https://vuejs-firebase-ce24d.firebaseio.com",
@@ -8,4 +9,4 @@ var firebaseApp = firebase.initializeApp({
     messagingSenderId: "98058674437"
 });
 
-module.exports = firebaseApp.database();
+export default firebaseApp.database();

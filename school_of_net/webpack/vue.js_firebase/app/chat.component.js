@@ -1,8 +1,10 @@
-define('chat.component', 
-['vue', 'vuefire', './firebase-db',], function(Vue, VueFire, db){
+import db from './firebase-db';
+import Vue from 'vue';
+import VueFire from 'vuefire';
+
 Vue.use(VueFire);
 
-return {
+export default {
     template: `
             <style type="text/css" scoped>
                 .chat {
@@ -77,5 +79,3 @@ return {
         }
     },
 };
-});
-
