@@ -14,13 +14,7 @@ var rooms = [
 Vue.use(VueFire);
 
 export default {
-    template: `
-            <ul>
-                <li v-for='o in rooms'>
-                    {{o.name}} - {{o.description}}
-                </li>
-            </ul>
-            `,
+    template: require('html-loader!../templates/rooms-create.component.html'),
     firebase: {
         rooms: db.ref('chat/rooms'),
     },
