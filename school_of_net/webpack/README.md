@@ -1,0 +1,2 @@
+# webpack [Curso](https://www.schoolofnet.com/curso-webpack/ "Link para o Curso")
+Nesse curso, você aprenderá o grande poder do Webpack, uma library fantástica para que você possa criar pacotes totalmente modulares javascript com a geração estática desses assets.
