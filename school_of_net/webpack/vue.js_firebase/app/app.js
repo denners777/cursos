@@ -2,8 +2,9 @@ require([
     'vue', 
     'vue-router', 
     './rooms-create.component', 
-    './rooms.component'
-    ], function(Vue, VueRouter, RoomsCreateComponent, RoomsComponent){
+    './rooms.component',
+    './chat.component'
+    ], function(Vue, VueRouter, RoomsCreateComponent, RoomsComponent, ChatComponent){
 
 Vue.use(VueRouter);
 
@@ -12,7 +13,7 @@ var router = new VueRouter();
 
 router.map({
     '/chat/:room': {
-        component: require('./chat.component'),
+        component: ChatComponent,
     },
     '/rooms': {
         component: RoomsComponent,

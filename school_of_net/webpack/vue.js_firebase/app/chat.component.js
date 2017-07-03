@@ -1,10 +1,8 @@
-var Vue = require('vue');
-var VueFire = require('vuefire');
-var db = require('./firebase-db');
-
+define('chat.component', 
+['vue', 'vuefire', './firebase-db',], function(Vue, VueFire, db){
 Vue.use(VueFire);
 
-module.exports = {
+return {
     template: `
             <style type="text/css" scoped>
                 .chat {
@@ -79,3 +77,5 @@ module.exports = {
         }
     },
 };
+});
+
