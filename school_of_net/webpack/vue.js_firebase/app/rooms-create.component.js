@@ -1,5 +1,7 @@
-define('rooms.component', 
-['vue', 'vuefire', './firebase-db',], function(Vue, VueFire, db){
+import Vue from 'vue';
+import VueFire from 'vuefire';
+import db from './firebase-db';
+
 var rooms = [
     { id: "001", name: "PHP", description: "Entusiasta do PHP" },
     { id: "002", name: "Java", description: "Developer experts" },
@@ -11,7 +13,7 @@ var rooms = [
 
 Vue.use(VueFire);
 
-return {
+export default {
     template: `
             <ul>
                 <li v-for='o in rooms'>
@@ -33,6 +35,3 @@ return {
         });
     },
 };
-});
-
-

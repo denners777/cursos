@@ -1,11 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import ChatComponent from './chat.component';
-
-require([
-    './rooms-create.component', 
-    './rooms.component',
-    ], function(RoomsCreateComponent, RoomsComponent){
+import RoomsComponent from './rooms.component';
+import RoomsCreateComponent from './rooms-create.component';
 
 Vue.use(VueRouter);
 
@@ -24,5 +21,3 @@ router.map({
     },
 });
 router.start(appComponent, '#app');
-
-});
