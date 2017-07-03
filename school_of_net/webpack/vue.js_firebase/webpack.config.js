@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: './app/app',
     output: {
@@ -5,4 +7,10 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/build/',
     },
+     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        })
+    ],
 };

@@ -40,3 +40,4 @@ nbdist/
 .sass-cache/
 
 school_of_net/git_e_github/aulagit
+.vscode

@@ -1,4 +1,9 @@
-require(['vue', 'vue-router'], function(Vue, VueRouter){
+require([
+    'vue', 
+    'vue-router', 
+    './rooms-create.component', 
+    './rooms.component'
+    ], function(Vue, VueRouter, RoomsCreateComponent, RoomsComponent){
 
 Vue.use(VueRouter);
 
@@ -10,10 +15,10 @@ router.map({
         component: require('./chat.component'),
     },
     '/rooms': {
-        component: require('./rooms.component'),
+        component: RoomsComponent,
     },
     '/rooms-create': {
-        component: require('./rooms-create.component'), 
+        component: RoomsCreateComponent, 
     },
 });
 router.start(appComponent, '#app');

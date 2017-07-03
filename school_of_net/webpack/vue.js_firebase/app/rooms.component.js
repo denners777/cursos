@@ -1,9 +1,6 @@
-require('./jquery');
-require('bootstrap');
-var md5 = require('blueimp-md5');
-var Vue = require('vue');
-var VueFire = require('vuefire');
-var db = require('./firebase-db');
+define('rooms.component', [
+    'blueimp-md5', 'vue', 'vuefire', './firebase-db','bootstrap',
+    ], function(md5, Vue, VueFire, db){
 
 Vue.use(VueFire);
 
@@ -76,3 +73,4 @@ module.exports = {
         },
     }
 };
+    });
