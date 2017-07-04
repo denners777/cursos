@@ -7,22 +7,26 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/build/',
     },
-     plugins: [
+    plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
         })
     ],
-     module: {
+    module: {
         loaders: [
             {
-                test: /\.js?$/, 
-                exclude: /node_modules/, 
+                test: /\.js?$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
                 }
             },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
+            }
         ]
     }
 };
