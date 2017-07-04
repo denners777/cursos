@@ -2,6 +2,41 @@
 Este é o repositório dos arquivos dos cursos que realizei para me aperfeiçoar na minha carreira profissional.
 Abaixo as descrições dos cursos e os links para os arquivos.
 
+------------
+
+## Índice
+- [Academy Fluig](#academy-fluig-academyfluigcom)
+    - [Gestão de Processos e Documentos - BPM / ECM](#gestão-de-processos-e-documentos---bpm--ecm-curso)
+    - [Plataforma Fluig - Fundamentos](#plataforma-fluig---fundamentos-curso)
+    - [Plataforma Fluig - Instalação](#plataforma-fluig---instalação-curso)
+- [Code Squad](#school-of-net-schoolofnetcom)
+    - [Sargento Laravel Framework PHP](#sargento-laravel-framework-php-curso)
+- [PMG Academy](#pmg-academy-pmgacademycom)
+    - [ITIL® Foundation](#itil-foundation-curso)
+    - [Cloud Foundation](#cloud-foundation-curso)
+    - [ISO 27002 Foundation](#iso-27002-foundation-curso)
+- [School of Net](#school-of-net-schoolofnetcom)
+    - [Banco de dados e Eloquent](#banco-de-dados-e-eloquent-curso)
+    - [Browserify](#browserify-curso)
+    - [Composer](#composer-curso)
+    - [Doctrine](#doctrine-curso)
+    - [Git e Github](#git-e-github-curso)
+    - [Grunt](#grunt-curso)
+    - [Gulp](#gulp-curso)
+    - [Iniciando com Laravel](#iniciando-com-laravel-curso)
+    - [Javascript Básico](#javascript-básico-curso)
+    - [Laravel - Autenticação](#laravel---autenticação-curso)
+    - [PHP - Avançando com OO](#php---avançando-com-oo-curso)
+    - [PHP com PDO](#php-com-pdo-curso)
+    - [PHP - Iniciando com OO](#php---iniciando-com-oo-curso)
+    - [PSRs](#psrs-curso)
+    - [Realtime com Vue.js 1 e Firebase](#realtime-com-vuejs-1-e-firebase-curso)
+    - [Vue.js 1](#vuejs-1-curso)
+    - [Webservices com PHP](#webservices-com-php-curso)
+    - [webpack](#webpack-curso)
+
+------------
+
 
 ## Academy Fluig [academy.fluig.com](http://www.academy.fluig.com/ "Link para a Escola")
 
@@ -10,15 +45,15 @@ Este treinamento é voltado para profissionais que atuam como desenvolvedores-BP
 Tem como finalidade demonstrar o desenvolvimento de componentes necessários para customização de processos, formulários e Integrações no fluig através das linguagens de programação HTML e Javascript.
 [Arquivos do Curso Gestão de Processos e Documentos - BPM / ECM](https://github.com/denners777/cursos/tree/master/academy.fluig/gestao_de_processos_e_documentos_bpm_ecm "Arquivos do Curso")
 
-### Plataforma fluig - Fundamentos [Curso](http://www.academy.fluig.com/cursos/plataforma-fluig-fundamentos "Link para o Curso")
+### Plataforma Fluig - Fundamentos [Curso](http://www.academy.fluig.com/cursos/plataforma-fluig-fundamentos "Link para o Curso")
 Este treinamento é voltado para usuários de negócios e administradores do fluig. 
 Tem como finalidade demonstrar seu uso básico, além da administração dos usuários, documentos, processos e páginas, além de boas práticas de configuração do produto.
-[Arquivos do Curso Plataforma fluig - Fundamentos](https://github.com/denners777/cursos/tree/master/academy.fluig/plataforma_fluig_fundamentos "Arquivos do Curso")
+[Arquivos do Curso Plataforma Fluig - Fundamentos](https://github.com/denners777/cursos/tree/master/academy.fluig/plataforma_fluig_fundamentos "Arquivos do Curso")
 
-### Plataforma fluig - Instalação [Curso](http://www.academy.fluig.com/cursos/instalacao "Link para o Curso")
+### Plataforma Fluig - Instalação [Curso](http://www.academy.fluig.com/cursos/instalacao "Link para o Curso")
 Destinado aos analistas que farão a instalação e configuração básica do fluig.
 Com ênfase em boas práticas no momento da instalação, este treinamento demonstra como manter instalar seu fluig em sistemas operacionais Windows e Linux, com bancos de dados SQL Server e MySQL, além de mostrar a instalação do fluig Studio, do fluig Connect e também do fluig Mobile.
-[Arquivos do Curso Plataforma fluig - Instalação](https://github.com/denners777/cursos/tree/master/academy.fluig/plataforma_fluig_instalacao_basica "Arquivos do Curso")
+[Arquivos do Curso Plataforma Fluig - Instalação](https://github.com/denners777/cursos/tree/master/academy.fluig/plataforma_fluig_instalacao_basica "Arquivos do Curso")
 
 
 ## Code Squad [code-squad.com](http://code-squad.com/ "Link para a Escola")
@@ -30,17 +65,17 @@ Utilização do framework PHP Laravel 5.1 com foco no desenvolvimento de aplica�
 
 ## PMG Academy [pmgacademy.com](http://www.pmgacademy.com/ "Link para a Escola")
 
-### ITIL FOUNDATION [Curso](http://www.pmgacademy.com/pt/products/curso-online-itil-v3-foundation "Link para o Curso")
-Este Curso Online é baseado no curso oficial, credenciado e homologado pelo EXIN® e tem como objetivo introduzir o contexto de Gerenciamento de Serviços de TI (ITSM) e a biblioteca de melhores práticas da ITIL® versão 2011, o curso da ITIL® Foundation Certificate in IT Service Management segue rigorosamente o programa oficial definido pela APMG® e é acreditado pelo instituto de exame: EXIN® (Holanda). O curso ITIL® Foundation Certificate in IT Service Management é completo e foca em dois aspectos: (1) Aprendizagem dos conceitos utilizados pelo ITIL® a partir de uma visão prática, ou seja, baseado em como aplicar cada conceito em situações reais vividas pelos alunos em suas atividades profissionais e (2) na preparação do aluno para o exame de certificação, por isso traz diversos exercícios simulando o exame. 
-[Arquivos do Curso ITIL FOUNDATION](https://github.com/denners777/cursos/tree/master/pmgacademy/ITIL%20Foundation "Arquivos do Curso")
+### ITIL® Foundation [Curso](http://www.pmgacademy.com/pt/products/curso-online-itil-v3-foundation "Link para o Curso")
+Este Curso Online é baseado no curso oficial, credenciado e homologado pelo EXIN® e tem como objetivo introduzir o contexto de Gerenciamento de Serviços de TI (ITSM) e a biblioteca de melhores práticas da ITIL® versão 2011, o curso da ITIL® Foundation Certificate in IT Service Management segue rigorosamente o programa oficial definido pela APMG® e é acreditado pelo instituto de exame: EXIN® (Holanda). O curso ITIL® Foundation Certificate in IT Service Management é completo e foca em dois aspectos: (1) Aprendizagem dos conceitos utilizados pelo ITIL® a partir de uma visão prática, ou seja, baseado em como aplicar cada conceito em situações reais vividas pelos alunos em suas atividades profissionais e (2) na preparação do aluno para o exame de certificação, por isso traz diversos exercícios simulando o exame.
+[Arquivos do Curso ITIL® Foundation](https://github.com/denners777/cursos/tree/master/pmgacademy/ITIL%20Foundation "Arquivos do Curso")
 
-### CLOUD FOUNDATION [Curso](http://www.pmgacademy.com/pt/products/curso-online-cloud-computing-foundation "Link para o Curso")
+### Cloud Foundation [Curso](http://www.pmgacademy.com/pt/products/curso-online-cloud-computing-foundation "Link para o Curso")
 Este treinamento é oficial, credenciado e homologado pelo EXIN® e tem como objetivo oferecer uma sólida compreensão dos conceitos fundamentais, implantação, arquitetura e desenho da plataforma de computação na nuvem. Cloud Computing significa a prestação de serviços de TI através da Internet. A computação em nuvem deve permitir soluções flexíveis de TI com o objetivo de suportar o negócio, baseada em acordos de serviços claramente definidos.
-[Arquivos do Curso CLOUD FOUNDATION](https://github.com/denners777/cursos/tree/master/pmgacademy/cloud_foundation "Arquivos do Curso")
+[Arquivos do Curso Cloud Foundation](https://github.com/denners777/cursos/tree/master/pmgacademy/cloud_foundation "Arquivos do Curso")
 
-### ISO 27002 FOUNDATION [Curso](http://www.pmgacademy.com/pt/products/curso-online-iso-27002-foundation-oficial "Link para o Curso")
+### ISO 27002 Foundation [Curso](http://www.pmgacademy.com/pt/products/curso-online-iso-27002-foundation-oficial "Link para o Curso")
 Este treinamento é oficial, credenciado e homologado pelo EXIN® e tem como objetivo de apresentar os requisitos fundamentais da norma NBR ISO/IEC 27002 para um Sistema de Gerenciamento da Segurança da Informação - SGSI, fornecendo aos profissionais de TI um entendimento dos princípios básicos de gestão da segurança da informação, além de preparar o candidato para o exame de certificação da ISO/IEC 27002 Foundation - ISMS (Information Security Management System) da EXIN. 
-[Arquivos do Curso ISO 27002 FOUNDATION](https://github.com/denners777/cursos/tree/master/pmgacademy/ISO%2027002%20Foundation "Arquivos do Curso")
+[Arquivos do Curso ISO 27002 Foundation](https://github.com/denners777/cursos/tree/master/pmgacademy/ISO%2027002%20Foundation "Arquivos do Curso")
 
 
 ## School of Net [schoolofnet.com](https://www.schoolofnet.com/ "Link para a Escola")
@@ -112,3 +147,7 @@ Aprenda a trabalhar com a biblioteca VueJS que vai proporcionar um HTML reativo,
 ### Webservices com PHP [Curso](https://www.schoolofnet.com/curso-webservices-com-php/ "Link para o Curso")
 Neste curso iremos aprender e implementar os conceitos principais por trás de SOAP, Rest e RPC, além de manipulação de XML e JSON.
 [Arquivos do Curso Webservices com PHP](https://github.com/denners777/cursos/tree/master/school_of_net/webservices_com_php "Arquivos do Curso")
+
+### webpack [Curso](https://www.schoolofnet.com/curso-webpack/ "Link para o Curso")
+Nesse curso, você aprenderá o grande poder do Webpack, uma library fantástica para que você possa criar pacotes totalmente modulares javascript com a geração estática desses assets.
+[Arquivos do Curso webpack](https://github.com/denners777/cursos/tree/master/school_of_net/webpack "Arquivos do Curso")
