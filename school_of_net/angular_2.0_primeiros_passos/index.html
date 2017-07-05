@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Angular 2 - School of Net</title>
     <meta charset="UTF-8">
@@ -11,11 +12,18 @@
 
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function(err){ console.error(err); });
+        System
+            .import('app')
+            .catch(
+                function (err) {
+                    console.error(err);
+                }
+            );
     </script>
 </head>
 
 <body>
-<my-app>Loading...</my-app>
+    <my-app>Loading...</my-app>
 </body>
+
 </html>
