@@ -1,18 +1,36 @@
 import { Component } from '@angular/core';
 
+class Task {
+    id: number;
+    name: string;
+}
+
+let TASKS: Task[] = [
+    { id: 1, name: 'Trabalhar' },
+    { id: 2, name: 'Lavar pratos' },
+    { id: 3, name: 'Tirar poeira' },
+    { id: 4, name: 'Compras no supermercado' },
+    { id: 5, name: 'Cuidar das crianças' },
+    { id: 6, name: 'Jogar videogame' },
+    { id: 7, name: 'Almoçar' },
+    { id: 8, name: 'Jantar' },
+    { id: 9, name: 'Fazer exercício' },
+    { id: 10, name: 'Pagar contas' }
+];
+
 @Component({
     selector: 'my-app',
     template: `
-    <h1>{{ title.name }}</h1>
-    <input [ngModel]="title.name" />
-    <input [(ngModel)]="title.name" />
-    <input [value]="title.description" />
+    <h1>{{ title }}</h1>
+    <ul>
+        <li *ngFor="let o of tasks">
+            {{ o.id }} - {{ o.name }}
+        </li>
+    </ul>
     `,
 })
 
 export class AppComponent {
-    title = {
-        description: "Hello World!!!",
-        name: "Denner",
-    }
+    title = "Lista de Tarefas";
+    tasks: Task[] = TASKS;
 }
