@@ -23,14 +23,26 @@ let TASKS: Task[] = [
     template: `
     <h1>{{ title }}</h1>
     <ul>
-        <li *ngFor="let o of tasks">
+        <li *ngFor="let o of tasks"(click)="onClick(o, $event)">
             {{ o.id }} - {{ o.name }}
         </li>
     </ul>
+    <input (keypress)="onKeyPress($event)" />
+    <button type="button" (click)="onClick({})">Clique-me!</button>
     `,
 })
 
 export class AppComponent {
     title = "Lista de Tarefas";
     tasks: Task[] = TASKS;
+
+    onClick(task, event){
+        console.log(task, event);
+    }
+    onKeyPress(event){
+        console.log(event);
+    }
 }
+
+// [] binding - propriedade do html
+// () alteracoes da view para o component

@@ -31,14 +31,22 @@ var AppComponent = (function () {
         this.title = "Lista de Tarefas";
         this.tasks = TASKS;
     }
+    AppComponent.prototype.onClick = function (task, event) {
+        console.log(task, event);
+    };
+    AppComponent.prototype.onKeyPress = function (event) {
+        console.log(event);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{ title }}</h1>\n    <ul>\n        <li *ngFor=\"let o of tasks\">\n            {{ o.id }} - {{ o.name }}\n        </li>\n    </ul>\n    ",
+            template: "\n    <h1>{{ title }}</h1>\n    <ul>\n        <li *ngFor=\"let o of tasks\"(click)=\"onClick(o, $event)\">\n            {{ o.id }} - {{ o.name }}\n        </li>\n    </ul>\n    <input (keypress)=\"onKeyPress($event)\" />\n    <button type=\"button\" (click)=\"onClick({})\">Clique-me!</button>\n    ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+// [] binding - propriedade do html
+// () alteracoes da view para o component 
 //# sourceMappingURL=app.component.js.map
