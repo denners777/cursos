@@ -26,21 +26,35 @@ var TASKS = [
     { id: 9, name: 'Fazer exercício' },
     { id: 10, name: 'Pagar contas' }
 ];
+var TaskEditComponent = (function () {
+    function TaskEditComponent() {
+    }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Task)
+    ], TaskEditComponent.prototype, "task", void 0);
+    TaskEditComponent = __decorate([
+        core_1.Component({
+            selector: 'task-edit',
+            template: "\n    <div *ngIf=\"task\">\n        <input type=\"text\" [(ngModel)]=\"task.name\" />\n    </div>\n    ",
+        }), 
+        __metadata('design:paramtypes', [])
+    ], TaskEditComponent);
+    return TaskEditComponent;
+}());
+exports.TaskEditComponent = TaskEditComponent;
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Lista de Tarefas";
         this.tasks = TASKS;
     }
-    AppComponent.prototype.onClick = function (task, event) {
-        console.log(task, event);
-    };
-    AppComponent.prototype.onKeyPress = function (event) {
-        console.log(event);
+    AppComponent.prototype.onClick = function (task) {
+        this.selectedTask = task;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{ title }}</h1>\n    <ul>\n        <li *ngFor=\"let o of tasks\"(click)=\"onClick(o, $event)\">\n            {{ o.id }} - {{ o.name }}\n        </li>\n    </ul>\n    <input (keypress)=\"onKeyPress($event)\" />\n    <button type=\"button\" (click)=\"onClick({})\">Clique-me!</button>\n    ",
+            template: "\n    <h1>{{ title }}</h1>\n    <ul>\n        <li *ngFor=\"let o of tasks\" (click)=\"onClick(o)\">\n            {{ o.id }} - {{ o.name }}\n        </li>\n    </ul>\n    <task-edit [task]=\"selectedTask\"></task-edit>\n    ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
