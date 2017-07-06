@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from './task';
 import { TaskService } from './task.service';
 
@@ -14,12 +15,12 @@ export class TaskListComponent implements OnInit {
     tasks: Task[];
     selectedTask: Task;
 
-    constructor(private taskService: TaskService) {
+    constructor(private taskService: TaskService, private router: Router) {
 
     }
 
-    selectTask(task) {
-        this.selectedTask = task;
+    goToEdit(id: number) {
+        this.router.navigate(['tasks', id, 'edit']);
     }
 
     deleteTask(id: number) {

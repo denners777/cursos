@@ -14,7 +14,10 @@
                     <td> {{ task.id }} </td>
                     <td> {{ task.name }} </td>
                     <td>
-                        <button type="button" class="btn btn-defaul" (click)="selectTask(task)">
+                        <!--<a class="btn btn-defaul" [routerLink]="['/tasks', task.id, 'edit']">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>-->
+                        <button type="button" class="btn btn-defaul" (click)="goToEdit(task.id)">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                         <button type="button" class="btn btn-danger" (click)="deleteTask(task.id)">

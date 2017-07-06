@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Task } from './task';
 import { TaskService } from './task.service';
 
@@ -14,9 +14,16 @@ declare var module: any;
 export class TaskEditComponent implements OnInit {
     task: Task;
 
-    constructor(private taskService: TaskService, private route: ActivatedRoute) {
+    constructor(
+        private taskService: TaskService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) { }
 
+    submit() {
+        this.router.navigate(['tasks', 'list']);
     }
+
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];

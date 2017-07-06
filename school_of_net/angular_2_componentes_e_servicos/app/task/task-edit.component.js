@@ -12,10 +12,14 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var task_service_1 = require('./task.service');
 var TaskEditComponent = (function () {
-    function TaskEditComponent(taskService, route) {
+    function TaskEditComponent(taskService, route, router) {
         this.taskService = taskService;
         this.route = route;
+        this.router = router;
     }
+    TaskEditComponent.prototype.submit = function () {
+        this.router.navigate(['tasks', 'list']);
+    };
     TaskEditComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
@@ -32,7 +36,7 @@ var TaskEditComponent = (function () {
             templateUrl: 'task-edit.component.html',
             moduleId: module.id
         }), 
-        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.ActivatedRoute, router_1.Router])
     ], TaskEditComponent);
     return TaskEditComponent;
 }());
