@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import { TaskService } from './task.service';
 
@@ -10,12 +10,12 @@ declare var module: any;
     moduleId: module.id
 })
 
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
     tasks: Task[];
     selectedTask: Task;
 
     constructor(private taskService: TaskService) {
-        this.tasks = this.taskService.getTasks();
+
     }
 
     selectTask(task) {
@@ -27,6 +27,10 @@ export class TaskListComponent {
         if (index != -1) {
             this.tasks.splice(index, 1);
         }
+    }
+
+    ngOnInit(): void {
+        this.tasks = this.taskService.getTasks();
     }
 
 }

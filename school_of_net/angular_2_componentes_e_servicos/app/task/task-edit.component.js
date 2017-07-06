@@ -13,9 +13,11 @@ var router_1 = require('@angular/router');
 var task_service_1 = require('./task.service');
 var TaskEditComponent = (function () {
     function TaskEditComponent(taskService, route) {
-        var _this = this;
         this.taskService = taskService;
         this.route = route;
+    }
+    TaskEditComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
             _this.task = _this.taskService.getTask(id);
@@ -23,7 +25,7 @@ var TaskEditComponent = (function () {
                 alert("Tarefa não existe");
             }
         });
-    }
+    };
     TaskEditComponent = __decorate([
         core_1.Component({
             selector: 'task-edit',

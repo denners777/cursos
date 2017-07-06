@@ -13,7 +13,6 @@ var task_service_1 = require('./task.service');
 var TaskListComponent = (function () {
     function TaskListComponent(taskService) {
         this.taskService = taskService;
-        this.tasks = this.taskService.getTasks();
     }
     TaskListComponent.prototype.selectTask = function (task) {
         this.selectedTask = task;
@@ -23,6 +22,9 @@ var TaskListComponent = (function () {
         if (index != -1) {
             this.tasks.splice(index, 1);
         }
+    };
+    TaskListComponent.prototype.ngOnInit = function () {
+        this.tasks = this.taskService.getTasks();
     };
     TaskListComponent = __decorate([
         core_1.Component({
