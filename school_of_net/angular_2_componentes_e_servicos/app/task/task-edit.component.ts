@@ -1,13 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Task } from './task';
 
+declare var module: any;
+
 @Component({
     selector: 'task-edit',
-    template: `
-    <div *ngIf="task">
-        <input type="text" [(ngModel)]="task.name" />
-    </div>
-    `,
+    templateUrl: 'task-edit.component.html',
+    moduleId: module.id
 })
 
 export class TaskEditComponent {

@@ -20,7 +20,8 @@ var TaskEditComponent = (function () {
     TaskEditComponent = __decorate([
         core_1.Component({
             selector: 'task-edit',
-            template: "\n    <div *ngIf=\"task\">\n        <input type=\"text\" [(ngModel)]=\"task.name\" />\n    </div>\n    ",
+            templateUrl: 'task-edit.component.html',
+            moduleId: module.id
         }), 
         __metadata('design:paramtypes', [])
     ], TaskEditComponent);

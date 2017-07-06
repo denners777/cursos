@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
+declare var module: any;
+
 @Component({
     selector: 'my-app',
-    template: `
-    <task-list></task-list>
-    `,
+    templateUrl: 'app.component.html',
+    moduleId: module.id
 })
 
 export class AppComponent {

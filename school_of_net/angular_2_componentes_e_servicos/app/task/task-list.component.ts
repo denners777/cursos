@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Task } from './task';
 
+declare var module: any;
 
 let TASKS: Task[] = [
     { id: 1, name: 'Trabalhar' },
@@ -17,34 +18,8 @@ let TASKS: Task[] = [
 
 @Component({
     selector: 'task-list',
-    template: `
-    <div class="container">
-        <div class="row">
-            <h2>Minhas Tarefas</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let task of tasks">
-                        <td> {{ task.id }} </td>
-                        <td> {{ task.name }} </td>
-                        <td>
-                            <button type="button" class="btn btn-defaul" (click)="onClick(task)">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <task-edit [task]="selectedTask"></task-edit>
-        </div>
-    </div>
-    `,
+    templateUrl: 'task-list.component.html',
+    moduleId: module.id
 })
 
 export class TaskListComponent {

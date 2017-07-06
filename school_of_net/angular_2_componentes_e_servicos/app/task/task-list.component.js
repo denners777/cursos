@@ -31,7 +31,8 @@ var TaskListComponent = (function () {
     TaskListComponent = __decorate([
         core_1.Component({
             selector: 'task-list',
-            template: "\n    <div class=\"container\">\n        <div class=\"row\">\n            <h2>Minhas Tarefas</h2>\n            <table class=\"table\">\n                <thead>\n                    <tr>\n                        <th>#</th>\n                        <th>Nome</th>\n                        <th>A\u00E7\u00F5es</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let task of tasks\">\n                        <td> {{ task.id }} </td>\n                        <td> {{ task.name }} </td>\n                        <td>\n                            <button type=\"button\" class=\"btn btn-defaul\" (click)=\"onClick(task)\">\n                                <span class=\"glyphicon glyphicon-pencil\"></span>\n                            </button>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n            <task-edit [task]=\"selectedTask\"></task-edit>\n        </div>\n    </div>\n    ",
+            templateUrl: 'task-list.component.html',
+            moduleId: module.id
         }), 
         __metadata('design:paramtypes', [])
     ], TaskListComponent);
