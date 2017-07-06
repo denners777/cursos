@@ -11,7 +11,10 @@
                 </tr>
             </thead>
             <tbody>
+                <!--<template ngFor let-task [ngForOf]="tasks">
+                    <tr>-->
                 <tr *ngFor="let task of tasks">
+                <!--<tr template="ngFor let task of tasks">-->
                     <td> {{ task.id }} </td>
                     <td> {{ task.name }} </td>
                     <td>
@@ -26,6 +29,7 @@
                         </button>
                     </td>
                 </tr>
+                <!--</template>-->
             </tbody>
         </table>
     </div>
