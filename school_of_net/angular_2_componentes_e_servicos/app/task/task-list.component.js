@@ -20,10 +20,7 @@ var TaskListComponent = (function () {
         this.router.navigate(['tasks', id, 'edit']);
     };
     TaskListComponent.prototype.deleteTask = function (id) {
-        var index = this.tasks.findIndex(function (item) { return item.id == id; });
-        if (index != -1) {
-            this.tasks.splice(index, 1);
-        }
+        this.taskService.deleteTask(id);
     };
     TaskListComponent.prototype.ngOnInit = function () {
         this.tasks = this.taskService.getTasks();

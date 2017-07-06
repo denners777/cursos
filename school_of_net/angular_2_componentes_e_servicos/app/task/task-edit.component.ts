@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Task } from './task';
 import { TaskService } from './task.service';
+import { MessageService } from '../message.service';
 
 declare var module: any;
 
@@ -17,10 +18,15 @@ export class TaskEditComponent implements OnInit {
     constructor(
         private taskService: TaskService,
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private messageService: MessageService
     ) { }
 
     submit() {
+        this.messageService.messages.push({
+            type: 'success',
+            message: 'Tarefa alterada com sucesso!!!'
+        });
         this.router.navigate(['tasks', 'list']);
     }
 

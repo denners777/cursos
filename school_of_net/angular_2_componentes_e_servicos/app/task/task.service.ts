@@ -1,4 +1,6 @@
+import { Injectable } from '@angular/core';
 import { Task } from './task';
+import { MessageService } from '../message.service';
 
 let TASKS: Task[] = [
     { id: 1, name: 'Trabalhar' },
@@ -12,8 +14,12 @@ let TASKS: Task[] = [
     { id: 9, name: 'Fazer exercício' },
     { id: 10, name: 'Pagar contas' }
 ];
-
+@Injectable()
 export class TaskService {
+
+    constructor(private messageService: MessageService) {
+
+    }
 
     getTasks(): Task[] {
         return TASKS
@@ -27,6 +33,20 @@ export class TaskService {
     createTask(task: Task) {
         task.id = this.getTasks().length + 1;
         this.getTasks().push(task);
+        this.messageService.messages.push({
+            type: 'success',
+            message: 'Tarefa incluída com sucesso!!!',
+        });
+    }
+    deleteTask(id: number) {
+        let index = this.getTasks().findIndex(item => item.id == id);
+        if (index != -1) {
+            this.getTasks().splice(index, 1);
+        }
+        this.messageService.messages.push({
+            type: 'success',
+            message: 'Tarefa excluída com sucesso!!!',
+        });
     }
 
 }

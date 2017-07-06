@@ -24,10 +24,7 @@ export class TaskListComponent implements OnInit {
     }
 
     deleteTask(id: number) {
-        let index = this.tasks.findIndex(item => item.id == id);
-        if (index != -1) {
-            this.tasks.splice(index, 1);
-        }
+        this.taskService.deleteTask(id);
     }
 
     ngOnInit(): void {

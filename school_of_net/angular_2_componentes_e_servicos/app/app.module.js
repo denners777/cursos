@@ -18,6 +18,7 @@ var task_list_component_1 = require('./task/task-list.component');
 var task_new_component_1 = require('./task/task-new.component');
 var task_service_1 = require('./task/task.service');
 var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
+var message_service_1 = require('./message.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent, task_edit_component_1.TaskEditComponent, task_list_component_1.TaskListComponent, task_new_component_1.TaskNewComponent
             ],
             bootstrap: [app_component_1.AppComponent],
-            providers: [task_service_1.TaskService],
+            providers: [task_service_1.TaskService, message_service_1.MessageService],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

@@ -11,13 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var task_service_1 = require('./task.service');
+var message_service_1 = require('../message.service');
 var TaskEditComponent = (function () {
-    function TaskEditComponent(taskService, route, router) {
+    function TaskEditComponent(taskService, route, router, messageService) {
         this.taskService = taskService;
         this.route = route;
         this.router = router;
+        this.messageService = messageService;
     }
     TaskEditComponent.prototype.submit = function () {
+        this.messageService.messages.push({
+            type: 'success',
+            message: 'Tarefa alterada com sucesso!!!'
+        });
         this.router.navigate(['tasks', 'list']);
     };
     TaskEditComponent.prototype.ngOnInit = function () {
@@ -36,7 +42,7 @@ var TaskEditComponent = (function () {
             templateUrl: 'task-edit.component.html',
             moduleId: module.id
         }), 
-        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.ActivatedRoute, router_1.Router, message_service_1.MessageService])
     ], TaskEditComponent);
     return TaskEditComponent;
 }());
