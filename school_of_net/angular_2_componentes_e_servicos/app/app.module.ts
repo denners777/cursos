@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
-import { AppComponent, TaskEditComponent } from './app.component';
+import { AppComponent } from './app.component';
+import {TaskEditComponent} from './task/task-edit.component';
 import {FormsModule} from "@angular/forms";
 
 
