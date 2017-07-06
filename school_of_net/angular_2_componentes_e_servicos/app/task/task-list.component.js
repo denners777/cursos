@@ -25,8 +25,14 @@ var TaskListComponent = (function () {
     function TaskListComponent() {
         this.tasks = TASKS;
     }
-    TaskListComponent.prototype.onClick = function (task) {
+    TaskListComponent.prototype.selectTask = function (task) {
         this.selectedTask = task;
+    };
+    TaskListComponent.prototype.deleteTask = function (id) {
+        var index = this.tasks.findIndex(function (item) { return item.id == id; });
+        if (index != -1) {
+            this.tasks.splice(index, 1);
+        }
     };
     TaskListComponent = __decorate([
         core_1.Component({

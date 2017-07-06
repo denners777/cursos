@@ -26,8 +26,15 @@ export class TaskListComponent {
     tasks: Task[] = TASKS;
     selectedTask: Task;
 
-    onClick(task) {
+    selectTask(task) {
         this.selectedTask = task;
+    }
+
+    deleteTask(id: number) {
+        let index = this.tasks.findIndex(item => item.id == id);
+        if (index != -1) {
+            this.tasks.splice(index, 1);
+        }
     }
 
 }
