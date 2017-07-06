@@ -21,7 +21,12 @@ export class TaskService {
 
     getTask(id: number): Task | null {
         let array = this.getTasks().filter(item => item.id == id);
-        return array.length ? array[0] : null;    
+        return array.length ? array[0] : null;
+    }
+
+    createTask(task: Task) {
+        task.id = this.getTasks().length + 1;
+        this.getTasks().push(task);
     }
 
 }

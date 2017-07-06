@@ -21,6 +21,10 @@ var TaskService = (function () {
         var array = this.getTasks().filter(function (item) { return item.id == id; });
         return array.length ? array[0] : null;
     };
+    TaskService.prototype.createTask = function (task) {
+        task.id = this.getTasks().length + 1;
+        this.getTasks().push(task);
+    };
     return TaskService;
 }());
 exports.TaskService = TaskService;
