@@ -14,12 +14,13 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require('./app.component');
 var task_edit_component_1 = require('./task/task-edit.component');
 var task_list_component_1 = require('./task/task-list.component');
+var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
             declarations: [app_component_1.AppComponent, task_edit_component_1.TaskEditComponent, task_list_component_1.TaskListComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
