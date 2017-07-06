@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Task } from './task';
+import { TaskService } from './task.service';
 
 declare var module: any;
 
@@ -10,6 +12,15 @@ declare var module: any;
 })
 
 export class TaskEditComponent {
-    @Input()
     task: Task;
+
+    constructor(private taskService: TaskService, private route: ActivatedRoute) {
+        this.route.params.forEach((params: Params) => {
+            let id = +params['id'];
+            this.task = this.taskService.getTask(id);
+            if(!this.task){
+                alert("Tarefa não existe");
+            }
+        });
+    }
 }

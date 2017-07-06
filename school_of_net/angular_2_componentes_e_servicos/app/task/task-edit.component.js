@@ -9,21 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var task_1 = require('./task');
+var router_1 = require('@angular/router');
+var task_service_1 = require('./task.service');
 var TaskEditComponent = (function () {
-    function TaskEditComponent() {
+    function TaskEditComponent(taskService, route) {
+        var _this = this;
+        this.taskService = taskService;
+        this.route = route;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.task = _this.taskService.getTask(id);
+            if (!_this.task) {
+                alert("Tarefa não existe");
+            }
+        });
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', task_1.Task)
-    ], TaskEditComponent.prototype, "task", void 0);
     TaskEditComponent = __decorate([
         core_1.Component({
             selector: 'task-edit',
             templateUrl: 'task-edit.component.html',
             moduleId: module.id
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.ActivatedRoute])
     ], TaskEditComponent);
     return TaskEditComponent;
 }());

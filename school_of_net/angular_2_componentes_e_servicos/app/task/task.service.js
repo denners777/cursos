@@ -17,6 +17,10 @@ var TaskService = (function () {
     TaskService.prototype.getTasks = function () {
         return TASKS;
     };
+    TaskService.prototype.getTask = function (id) {
+        var array = this.getTasks().filter(function (item) { return item.id == id; });
+        return array.length ? array[0] : null;
+    };
     return TaskService;
 }());
 exports.TaskService = TaskService;

@@ -13,10 +13,8 @@ declare var module: any;
 export class TaskListComponent {
     tasks: Task[];
     selectedTask: Task;
-    taskService: TaskService;
 
-    constructor() {
-        this.taskService = new TaskService();
+    constructor(private taskService: TaskService) {
         this.tasks = this.taskService.getTasks();
     }
 

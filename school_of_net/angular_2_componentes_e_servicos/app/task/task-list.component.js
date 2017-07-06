@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var task_service_1 = require('./task.service');
 var TaskListComponent = (function () {
-    function TaskListComponent() {
-        this.taskService = new task_service_1.TaskService();
+    function TaskListComponent(taskService) {
+        this.taskService = taskService;
         this.tasks = this.taskService.getTasks();
     }
     TaskListComponent.prototype.selectTask = function (task) {
@@ -30,7 +30,7 @@ var TaskListComponent = (function () {
             templateUrl: 'task-list.component.html',
             moduleId: module.id
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [task_service_1.TaskService])
     ], TaskListComponent);
     return TaskListComponent;
 }());
