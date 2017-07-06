@@ -7,10 +7,11 @@ import { TaskEditComponent } from './task/task-edit.component';
 import { TaskListComponent } from './task/task-list.component';
 import { TaskNewComponent } from './task/task-new.component';
 import { TaskService } from './task/task.service';
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, routing],
+    imports: [BrowserModule, FormsModule, routing, AlertModule],
     declarations: [
         AppComponent, TaskEditComponent, TaskListComponent, TaskNewComponent
     ],
