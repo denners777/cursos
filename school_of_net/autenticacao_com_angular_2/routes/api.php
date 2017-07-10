@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +12,16 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::group(['middleware' => 'cors'], function () {
+    Route::group(['middleware' => 'jwt.auth'], function () {
+        Route::get('products', 'Api\ProductsController@index');
+        Route::get('session', 'Api\PagSeguroController@getSessionId');
+        Route::post('order', 'Api\OrdersController@store');
+    });
+    Route::post('login', 'Api\AuthController@login');
 });
