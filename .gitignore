@@ -372,7 +372,10 @@ Temporary Items
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# End of https://www.gitignore.io/api/grunt,bower,angular,phalcon,symfony,laravel,netbeans,reactnative,dreamweaver,codeigniter,visualstudiocode
+### Git ###
+*.orig
+
+# End of https://www.gitignore.io/api/git,grunt,bower,angular,phalcon,symfony,laravel,netbeans,reactnative,dreamweaver,codeigniter,visualstudiocode
 
 
 school_of_net/git_e_github/aulagit
