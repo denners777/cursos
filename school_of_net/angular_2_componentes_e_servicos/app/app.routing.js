@@ -21,6 +21,10 @@ var appRoutes = [
         path: 'tasks/:id/edit',
         component: task_edit_component_1.TaskEditComponent
     },
+    {
+        path: 'tasks/teste',
+        component: task_new_component_1.TaskNewComponent
+    },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map

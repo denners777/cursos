@@ -23,6 +23,11 @@ const appRoutes: Routes = [
         path: 'tasks/:id/edit',
         component: TaskEditComponent
     },
+    {
+
+        path: 'tasks/teste',
+        component: TaskNewComponent
+    },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
