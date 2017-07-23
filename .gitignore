@@ -347,6 +347,7 @@ Temporary Items
 /bin/*
 !bin/console
 !bin/symfony_requirements
+composer.lock
 
 # Assets and user uploads
 /web/bundles/
