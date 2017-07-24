@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(private af: AngularFire) { }
 
   ngOnInit() {
-    this.items = this.af.database.list('/courses');
+    this.items = this.af.database.list('/angular_firebase');
 
   }
 
