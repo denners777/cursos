@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
+import { EscolhaPage } from '../escolha/escolha';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -44,8 +46,8 @@ export class HomePage implements OnInit {
       });
   }
   seleciona(carro) {
-
-    alert(carro.nome);
+    // realizando a navegação adicionando `Escolha` na pilha!
+    this.navCtrl.push(EscolhaPage, { carroSelecionado: carro })
   }
 
 }
