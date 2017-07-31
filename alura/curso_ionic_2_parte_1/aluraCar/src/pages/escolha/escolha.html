@@ -1,35 +1,41 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Sua escolha
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Sua escolha
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-     <ion-card>
+    <ion-card>
         <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+                    VEÍCULO
+                </ion-item-divider>
+                <ion-item>{{carro.nome}}</ion-item>
+                <ion-item>R${{carro.preco}}</ion-item>
+            </ion-item-group>
 
-          <ion-item-group>
-            <ion-item-divider color="light">
-              <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
-              VEÍCULO
-            </ion-item-divider>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon ios="ios-options" md="md-options" item-left></ion-icon>
+                    ACESSÓRIOS
+                </ion-item-divider>
 
-            <ion-item>{{carro.nome}}</ion-item>
-            <ion-item>R${{carro.preco}}</ion-item>
-          </ion-item-group>
+                <!-- construindo a lista de acessórios dinamicamente -->
+                <ion-item *ngFor="let acessorio of acessorios">
+                    <ion-label>
+                        <h2>{{acessorio.nome}}</h2>
+                        <h3>R${{acessorio.preco}}</h3>
+                    </ion-label>
+                    <ion-toggle color="secondary"></ion-toggle>
+                </ion-item>
 
-          <ion-item-group>
-            <ion-item-divider color="light">
-              <ion-icon ios="ios-options" md="md-options" item-left></ion-icon>
-              ACESSÓRIOS
-            </ion-item-divider>
-            <ion-item>Acessório 1</ion-item>
-            <ion-item>acessório 2</ion-item>
-          </ion-item-group>
+            </ion-item-group>
 
         </ion-card-content>
-     </ion-card>
-     <button ion-button block>Avançar no agendamento</button>
+        <button ion-button block>Avançar no agendamento</button>
+    </ion-card>
 </ion-content>
