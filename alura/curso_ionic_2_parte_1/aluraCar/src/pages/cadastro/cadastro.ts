@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 
+import { HomePage } from '../home/home';
+
 import { Carro } from '../../domain/carro/carro';
 
 import { Http } from '@angular/http';
@@ -32,7 +34,14 @@ export class CadastroPage {
 
     this._alerta = this._alertCtrl.create({
       title: 'Aviso',
-      buttons: [{ text: 'Ok' }]
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.setRoot(HomePage);
+          }
+        }
+      ]
     });
 
   }
