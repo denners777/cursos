@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-// importando a classe
 import { Acessorio } from '../../domain/carro/acessorio';
 import { Carro } from '../../domain/carro/carro';
+
+// tivemos que importar para podermos navegar ara CadastroPage
+import { CadastroPage } from '../cadastro/cadastro';
 
 @Component({
     templateUrl: 'escolha.html'
@@ -14,15 +16,16 @@ export class EscolhaPage {
     public acessorios: Acessorio[];
     private _precoTotal: number = 0;
 
-    constructor(public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
 
         this.carro = navParams.get('carroSelecionado');
         this._precoTotal = this.carro.preco;
         this.acessorios = [
             new Acessorio('Freio ABS', 800),
-            new Acessorio('Ar-condicionado', 1000),
+            new Acessorio('Ar-condicionado',1000),
             new Acessorio('MP3 Player', 500)
         ];
+
     }
 
     get precoTotal() {
@@ -32,8 +35,17 @@ export class EscolhaPage {
     atualizaTotal(ligado: boolean, acessorio: Acessorio) {
 
         ligado ?
-            this._precoTotal += acessorio.preco :
-            this._precoTotal -= acessorio.preco;
+            this._precoTotal+= acessorio.preco :
+            this._precoTotal-= acessorio.preco;
     }
+
+    // novo método 
+    avancaNoAgendamento() {
+
+        this.navCtrl.push(CadastroPage, {
+            carro: this.carro, 
+            precoTotal: this._precoTotal
+        });
+    }    
 
 }
