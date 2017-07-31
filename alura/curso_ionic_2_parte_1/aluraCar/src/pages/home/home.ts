@@ -8,7 +8,7 @@ import { Http } from '@angular/http';
 })
 export class HomePage implements OnInit {
 
-  public carros;
+  public carros = [];
 
   constructor(
     public navCtrl: NavController,
@@ -42,6 +42,10 @@ export class HomePage implements OnInit {
             subTitle: 'Não foi possível obter a lista de carros. Tente mais tarde.'
           }).present();
       });
+  }
+  seleciona(carro) {
+
+    alert(carro.nome);
   }
 
 }
