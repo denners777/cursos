@@ -29,6 +29,16 @@ export class CadastroPage {
 
   }
   agenda() {
-
+    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.carro.nome}&nome=${this.nome}&preco=${this.precoTotal}&endereco=${this.endereco}&email=${this.email}&dataAgendamento=${this.data}`;
+    
+    this._http
+      .get(api)
+      .toPromise()
+      .then(() => alert('Agendou'))
+      .catch(err => {
+        console.log(err);
+        alert('Deu problema!');
+      }
+    );
   }
 }
