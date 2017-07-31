@@ -4,6 +4,7 @@ import { NavController, NavParams, AlertController, Alert } from 'ionic-angular'
 import { HomePage } from '../home/home';
 
 import { Carro } from '../../domain/carro/carro';
+import { Agendamento } from '../../domain/agendamento/agendamento';
 
 import { Http } from '@angular/http';
 
@@ -16,10 +17,7 @@ export class CadastroPage {
   public carro: Carro;
   public precoTotal: number;
 
-  public nome: string;
-  public endereco: string;
-  public email: string;
-  public data: string = new Date().toISOString();
+  public agendamento: Agendamento;
   private _alerta: Alert;
 
   constructor(
@@ -31,6 +29,8 @@ export class CadastroPage {
 
     this.carro = navParams.get('carro');
     this.precoTotal = navParams.get('precoTotal');
+
+    this.agendamento = new Agendamento(this.carro, this.precoTotal);
 
     this._alerta = this._alertCtrl.create({
       title: 'Aviso',
@@ -46,7 +46,7 @@ export class CadastroPage {
 
   }
   agenda() {
-    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.carro.nome}&nome=${this.nome}&preco=${this.precoTotal}&endereco=${this.endereco}&email=${this.email}&dataAgendamento=${this.data}`;
+    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.agendamento.carro}&nome=${this.agendamento.nome}&preco=${this.precoTotal}&endereco=${this.agendamento.endereco}&email=${this.agendamento.email}&dataAgendamento=${this.agendamento.data}`;
 
     this._http
       .get(api)
