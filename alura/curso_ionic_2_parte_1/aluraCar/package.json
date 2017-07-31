@@ -27,6 +27,7 @@
     "sw-toolbox": "3.4.0"
   },
   "devDependencies": {
+    "@angular/cli": "^1.2.6",
     "@ionic/app-scripts": "1.0.0",
     "typescript": "2.0.9"
   },
