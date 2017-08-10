@@ -1,10 +1,10 @@
-import { MyProjectPage } from './app.po';
+import { TesteBulmaPage } from './app.po';
 
-describe('my-project App', () => {
-  let page: MyProjectPage;
+describe('teste-bulma App', () => {
+  let page: TesteBulmaPage;
 
   beforeEach(() => {
-    page = new MyProjectPage();
+    page = new TesteBulmaPage();
   });
 
   it('should display welcome message', () => {
