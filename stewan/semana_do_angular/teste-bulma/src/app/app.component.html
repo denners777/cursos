@@ -200,10 +200,19 @@
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
-                Full Height title
+                {{ title }}
             </h1>
+            <ul>
+                <li *ngFor="let  pessoa of servicoPessoa.lista" [ngClass]="{'hide':pessoa.idade < 18}" (click)="servicoPessoa.selecionaPessoa(pessoa)">
+                    <p *ngIf="pessoa.idade >= 18">
+                        Nome: {{ pessoa.nome }} <br> Idade: {{ pessoa.idade }} <br> Descrição:
+                        <span [innerHtml]='pessoa.descricao'></span>
+                        <br /><br />
+                    </p>
+                </li>
+            </ul>
             <h2 class="subtitle">
-                Full Height subtitle
+                <br /> Pessoa selecionada: <br /> Nome: {{ servicoPessoa.pessoa_selecionada.nome }} <br /> Idade: {{ servicoPessoa.pessoa_selecionada.idade }}
             </h2>
         </div>
     </div>
