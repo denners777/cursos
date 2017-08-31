@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import { ProductsModule } from '../products/products.module';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
@@ -14,6 +16,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ProductsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
